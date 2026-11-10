@@ -1,0 +1,1124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+</head>
+<body>
+<title>Kingdom Crossroads</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="author" content="Dr. Rohan Jowallah, Ed.D., FHEA">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=DM+Serif+Display:ital@0;1&display=swap">
+<style>
+/* Layout: a night-olive band holds the village-on-a-hill map; below it, the route cards. Each zone opens a page: learn, read the Word, practise, decide, reflect, stamp. Palette: olive hills, lamp gold, Galilee blue, communion wine on sage stone. */
+:root{
+--bg:#f3f6fc; --surface:#ffffff; --surface-2:#e7edf9; --fg:#0d1a33; --muted:#4c5a75; --line:#d5deef;
+--gold:#8a5b00; --gold-hi:#ffc727; --olive:#1f4fd6; --sea:#1f4fd6; --wine:#1f4fd6;
+--band1:#0a1a44; --band2:#1537a0; --on-band:#f5f8ff; --on-band-muted:#bccaee;
+--ok:#2b7445; --ok-bg:#e1f1e5; --no:#b0362a; --no-bg:#fbe4e0; --mid:#8a5a00; --mid-bg:#fbefd6;
+--btn:#1f4fd6; --on-btn:#ffffff;
+--m-sea:#93c3cf; --m-wave:#bfe0e7; --m-land:#d5dcae; --m-shore:#efe6c4; --m-hill:#b4c385; --m-hill2:#9db06c; --m-road:#e9d6a4; --m-road-edge:#c9b07a; --m-wall:#f8f1e1; --m-stone:#c9c2b0; --m-roof:#a8433a; --m-roof2:#2c6a82; --m-tree:#5d7c36; --m-trunk:#7a5a3a; --m-lake:#6eaec2; --m-win:#f2c14e; --m-tent:#e9dfc6; --m-line:#5b4a36;
+--f-display:"DM Serif Display", Georgia, "Times New Roman", serif;
+--f-body:"Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+--r:16px; --shadow:0 1px 2px rgba(13,26,51,.08), 0 10px 30px rgba(21,55,160,.12);
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+--bg:#0a1126; --surface:#111b38; --surface-2:#18244a; --fg:#eaf0ff; --muted:#a3b1d4; --line:#26345f;
+--gold:#ffd25e; --gold-hi:#ffc727; --olive:#7ea4ff; --sea:#8db0ff; --wine:#8db0ff;
+--band1:#060d24; --band2:#12308c; --on-band:#f5f8ff; --on-band-muted:#a9b8e0;
+--ok:#7fd49a; --ok-bg:#183a26; --no:#ff917f; --no-bg:#43201b; --mid:#f2c46a; --mid-bg:#3a2e12;
+--btn:#3567ee; --on-btn:#ffffff;
+--m-sea:#244b59; --m-wave:#386775; --m-land:#55623d; --m-shore:#6f6a4c; --m-hill:#4a5a33; --m-hill2:#3e4d2a; --m-road:#8c7a52; --m-road-edge:#6a5a3a; --m-wall:#d9d0bc; --m-stone:#8f887a; --m-roof:#a14a42; --m-roof2:#3f8199; --m-tree:#33502a; --m-trunk:#5a4430; --m-lake:#2f6f82; --m-win:#f2c14e; --m-tent:#cfc4a8; --m-line:#2a2218;
+--shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 30px rgba(0,0,0,.35); color-scheme:dark }}
+:root[data-theme="dark"]{
+--bg:#0a1126; --surface:#111b38; --surface-2:#18244a; --fg:#eaf0ff; --muted:#a3b1d4; --line:#26345f;
+--gold:#ffd25e; --gold-hi:#ffc727; --olive:#7ea4ff; --sea:#8db0ff; --wine:#8db0ff;
+--band1:#060d24; --band2:#12308c; --on-band:#f5f8ff; --on-band-muted:#a9b8e0;
+--ok:#7fd49a; --ok-bg:#183a26; --no:#ff917f; --no-bg:#43201b; --mid:#f2c46a; --mid-bg:#3a2e12;
+--btn:#3567ee; --on-btn:#ffffff;
+--m-sea:#244b59; --m-wave:#386775; --m-land:#55623d; --m-shore:#6f6a4c; --m-hill:#4a5a33; --m-hill2:#3e4d2a; --m-road:#8c7a52; --m-road-edge:#6a5a3a; --m-wall:#d9d0bc; --m-stone:#8f887a; --m-roof:#a14a42; --m-roof2:#3f8199; --m-tree:#33502a; --m-trunk:#5a4430; --m-lake:#2f6f82; --m-win:#f2c14e; --m-tent:#cfc4a8; --m-line:#2a2218;
+--shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 30px rgba(0,0,0,.35); color-scheme:dark }
+
+*{box-sizing:border-box}
+html{scroll-padding-top:64px}
+body{background:var(--bg); color:var(--fg); font-family:var(--f-body); font-size:17px; line-height:1.55; margin:0}
+body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px); z-index:30; background:var(--band1)}
+.wrap{max-width:1080px; margin:0 auto; padding-left:max(16px, env(safe-area-inset-left,0px)); padding-right:max(16px, env(safe-area-inset-right,0px))}
+h1,h2,h3{text-wrap:balance; line-height:1.15; margin:0}
+p{margin:0}
+button{font:inherit; color:inherit; cursor:pointer}
+:focus-visible{outline:3px solid var(--gold-hi); outline-offset:2px; border-radius:6px}
+.kicker{display:inline-flex; align-items:center; gap:8px; font-size:.78rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-hi)}
+.kicker::before{content:""; width:22px; height:2px; background:currentColor; border-radius:2px}
+.kicker.dark{color:var(--wine)}
+
+/* top bar */
+.bar{position:sticky; top:env(safe-area-inset-top,0px); z-index:20; background:color-mix(in srgb, var(--band1) 94%, transparent); backdrop-filter:blur(10px); color:var(--on-band); border-bottom:1px solid rgba(255,255,255,.08)}
+.bar .wrap{display:flex; align-items:center; gap:12px; padding-block:10px; flex-wrap:wrap}
+.brand{font-family:var(--f-display); font-size:1.3rem; flex:1; min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; background:none; border:none; text-align:left; padding:0; color:var(--on-band)}
+.bar .nav{background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.24); color:var(--on-band); padding:7px 14px; border-radius:999px; font-size:.92rem}
+.bar .nav:hover{background:rgba(255,255,255,.2)}
+.meter{display:flex; align-items:center; gap:8px; font-size:.9rem; font-variant-numeric:tabular-nums}
+.meter .track{width:100px; height:8px; background:rgba(255,255,255,.2); border-radius:9px; overflow:hidden}
+.meter .fill{height:100%; background:var(--gold-hi); width:0; transition:width .5s}
+@media (max-width:560px){ .meter .track{display:none} }
+
+/* band + hero */
+.band{position:relative; color:var(--on-band); background:radial-gradient(900px 420px at 88% -10%, rgba(255,199,39,.30), transparent 60%), radial-gradient(800px 460px at -10% 110%, rgba(58,108,240,.55), transparent 60%), linear-gradient(165deg, var(--band1), var(--band2)); padding-bottom:40px}
+.band-in{padding-block:32px 8px; display:grid; gap:22px}
+.hero{display:grid; gap:14px; max-width:860px}
+.hero h1{font-family:var(--f-display); font-weight:400; line-height:1; font-size:clamp(2.6rem,7vw,4.6rem); color:#fff}
+.hero h1 em{color:var(--gold-hi)}
+.hero .lede{max-width:62ch; font-size:1.1rem; color:var(--on-band-muted)}
+.steps5{list-style:none; margin:4px 0 0; padding:0; display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:10px; counter-reset:k}
+.steps5 li{counter-increment:k; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:14px; padding:10px 12px; font-size:.86rem; color:var(--on-band-muted); display:grid; gap:2px; align-content:start; min-width:0}
+.steps5 li b{color:#fff; font-size:1rem; display:flex; gap:8px; align-items:center}
+.steps5 li b::before{content:counter(k); width:22px; height:22px; flex:none; border-radius:50%; background:var(--gold-hi); color:#0d1a33; display:grid; place-items:center; font-size:.78rem}
+@media (max-width:760px){ .steps5{grid-template-columns:repeat(2,minmax(0,1fr))} }
+
+.welcome{background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.16); border-radius:18px; padding:16px; display:grid; gap:12px; max-width:640px}
+.welcome label{font-weight:700; font-size:.95rem}
+.welcome input{width:100%; padding:11px 14px; border-radius:12px; border:1.5px solid rgba(255,255,255,.3); background:rgba(0,0,0,.25); color:#fff; font:inherit}
+.welcome input::placeholder{color:var(--on-band-muted)}
+.tracks{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+@media (max-width:520px){ .tracks{grid-template-columns:1fr} }
+.trackbtn{text-align:left; background:rgba(255,255,255,.08); border:1.5px solid rgba(255,255,255,.22); border-radius:14px; padding:12px 14px; color:#fff; display:grid; gap:2px}
+.trackbtn small{color:var(--on-band-muted)}
+.trackbtn:hover{border-color:var(--gold-hi)}
+.trackbtn[aria-pressed="true"]{border-color:var(--gold-hi); background:rgba(255,199,39,.16)}
+.who{display:flex; flex-wrap:wrap; gap:8px 14px; align-items:center; color:var(--on-band-muted)}
+.who b{color:#fff}
+.linkbtn{background:none; border:none; padding:0; text-decoration:underline; color:var(--gold-hi); font-size:.92rem}
+
+/* map */
+.mapbox{border-radius:20px; overflow:hidden; border:1px solid rgba(255,255,255,.14); box-shadow:0 30px 60px rgba(0,0,0,.45); background:var(--m-sea); position:relative; aspect-ratio:var(--map-ratio, 16/10); max-width:100%}
+.mapbox svg, .mapbox img{position:absolute; inset:0; width:100%; height:100%; display:block}
+.mapbox img{object-fit:cover; z-index:1}
+.m-sea{fill:var(--m-sea)} .m-wave{fill:none; stroke:var(--m-wave); stroke-width:3; stroke-linecap:round}
+.m-land{fill:var(--m-land)} .m-shore{fill:none; stroke:var(--m-shore); stroke-width:14}
+.m-hill{fill:var(--m-hill)} .m-hill2{fill:var(--m-hill2)} .m-lake{fill:var(--m-lake)}
+.m-road{fill:none; stroke:var(--m-road); stroke-width:16; stroke-linecap:round}
+.m-road-edge{fill:none; stroke:var(--m-road-edge); stroke-width:22; stroke-linecap:round}
+.m-road-dash{fill:none; stroke:var(--m-road-edge); stroke-width:2.5; stroke-dasharray:4 14; stroke-linecap:round}
+.m-wall{fill:var(--m-wall); stroke:var(--m-line); stroke-width:2} .m-stone{fill:var(--m-stone); stroke:var(--m-line); stroke-width:2}
+.m-roof{fill:var(--m-roof); stroke:var(--m-line); stroke-width:2} .m-roof2{fill:var(--m-roof2); stroke:var(--m-line); stroke-width:2}
+.m-tent{fill:var(--m-tent); stroke:var(--m-line); stroke-width:2} .m-win{fill:var(--m-win)}
+.m-tree{fill:var(--m-tree)} .m-trunk{fill:var(--m-trunk)} .m-sheep{fill:#fff; stroke:var(--m-line); stroke-width:1.5}
+.m-arch{fill:none; stroke:var(--m-roof); stroke-width:10; stroke-linecap:round}
+.m-fence{fill:none; stroke:var(--m-trunk); stroke-width:4; stroke-dasharray:2 7}
+.m-label{font:700 26px var(--f-body); fill:var(--m-line); opacity:.55; letter-spacing:.3em}
+.wave{animation:drift 7s ease-in-out infinite alternate}
+@keyframes drift{from{transform:translateX(-10px)}to{transform:translateX(10px)}}
+
+.pin{position:absolute; transform:translate(-50%,-50%); display:grid; justify-items:center; gap:4px; background:none; border:none; padding:0; z-index:2}
+.pin .dot{width:38px; height:38px; border-radius:50%; display:grid; place-items:center; font:700 1rem/1 var(--f-body); border:3px solid #fff; box-shadow:0 3px 10px rgba(0,0,0,.4); background:#5c6660; color:#fff; font-variant-numeric:tabular-nums}
+.pin.cur .dot{background:var(--gold-hi); color:#0d1a33; animation:glow 1.8s ease-out infinite}
+.pin.dn .dot{background:#1f4fd6; color:#fff}
+.pin .nm{font-size:.78rem; font-weight:700; background:rgba(10,26,68,.88); color:#fff; padding:3px 9px; border-radius:999px; white-space:nowrap}
+.pin.lk .nm{opacity:.75}
+.pin:hover .dot, .pin:focus-visible .dot{transform:scale(1.12)}
+.pin:focus-visible{outline:none}
+.pin:focus-visible .dot{outline:3px solid var(--gold-hi); outline-offset:3px}
+@keyframes glow{0%{box-shadow:0 0 0 0 rgba(255,199,39,.9)}100%{box-shadow:0 0 0 18px rgba(255,199,39,0)}}
+@media (max-width:700px){ .pin .nm{display:none} .pin .dot{width:28px; height:28px; font-size:.82rem; border-width:2px} }
+.maphint{font-size:.9rem; color:var(--on-band-muted); text-align:center}
+
+/* route */
+.section-h{display:flex; align-items:flex-end; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-top:26px}
+.section-h h2{font-family:var(--f-display); font-weight:400; font-size:clamp(1.7rem,3.4vw,2.3rem); margin-top:4px}
+.count{font-weight:700; font-size:.9rem; background:var(--surface); border:1px solid var(--line); padding:6px 14px; border-radius:999px; font-variant-numeric:tabular-nums}
+.rt{list-style:none; margin:18px 0 34px; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:14px}
+.rt button{width:100%; text-align:left; background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:16px; display:grid; gap:6px; box-shadow:var(--shadow); transition:transform .2s; height:100%; align-content:start}
+.rt button:hover{transform:translateY(-4px)}
+.rt .top{display:flex; justify-content:space-between; align-items:center; gap:8px}
+.rt .num{width:34px; height:34px; border-radius:50%; display:grid; place-items:center; font-weight:700; background:var(--surface-2); color:var(--muted); font-variant-numeric:tabular-nums}
+.rt .cur .num{background:var(--gold-hi); color:#0d1a33}
+.rt .dn .num{background:var(--btn); color:var(--on-btn)}
+.rt .st{font-size:.72rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
+.rt .cur .st{color:var(--gold)} .rt .dn .st{color:var(--wine)}
+.rt .cur{border-color:var(--gold-hi); box-shadow:0 0 0 3px color-mix(in srgb, var(--gold-hi) 35%, transparent), var(--shadow)}
+.rt b{font-family:var(--f-display); font-weight:400; font-size:1.35rem}
+.rt small{color:var(--muted); font-size:.9rem}
+.rt .lk{opacity:.72}
+
+/* zone page */
+.zhead{padding-block:26px 6px; display:grid; gap:12px}
+.back{background:none; border:none; padding:0; color:var(--sea); font-weight:700; width:fit-content}
+.zhead h1{font-family:var(--f-display); font-weight:400; font-size:clamp(2.2rem,5.6vw,3.4rem)}
+.zhead .big{font-size:1.15rem; max-width:64ch}
+.keep{display:inline-flex; gap:8px; align-items:center; background:var(--surface-2); border-radius:999px; padding:5px 14px; font-size:.9rem; width:fit-content; max-width:100%}
+
+.word{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; margin-top:8px}
+.verse{background:var(--surface); border:1px solid var(--line); border-left:4px solid var(--gold-hi); border-radius:12px; padding:14px 16px; display:grid; gap:6px; min-width:0}
+.verse p{font-family:var(--f-display); font-size:1.18rem; line-height:1.35}
+.verse cite{font-style:normal; font-weight:700; font-size:.86rem; color:var(--gold); letter-spacing:.04em}
+.verse p.plain{font-family:var(--f-body); font-size:.94rem; line-height:1.45; color:var(--muted); border-top:1px dashed var(--line); padding-top:8px}
+.verse p.plain b{color:var(--fg)}
+.help{background:var(--surface); border:2px solid var(--gold-hi); border-radius:var(--r); padding:16px; display:grid; gap:8px}
+.help h3{font-size:1.1rem}
+.help ul{margin:0; padding-left:20px; display:grid; gap:4px}
+.help .sel{user-select:all; font-variant-numeric:tabular-nums}
+
+.block{margin-block:30px; display:grid; gap:14px}
+.block > header{display:flex; align-items:center; gap:12px; flex-wrap:wrap}
+.step{font-weight:700; color:#0d1a33; background:var(--gold-hi); width:34px; height:34px; border-radius:50%; display:inline-grid; place-items:center; font-size:1rem; flex:none}
+.block h2{font-size:1.45rem; font-family:var(--f-display); font-weight:400}
+.block .sub{color:var(--muted); font-size:.95rem; flex-basis:100%}
+
+.cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:12px}
+.card{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:14px 16px; display:grid; gap:8px; align-content:start; min-width:0}
+.card .term{font-weight:700; font-size:1.05rem}
+.card .def{font-size:.97rem}
+.card .ex{font-size:.92rem; color:var(--muted); border-left:3px solid var(--sea); padding-left:10px}
+
+.guard{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+@media (max-width:720px){ .guard{grid-template-columns:1fr} }
+.guard > div{border-radius:var(--r); padding:16px; display:grid; gap:8px; align-content:start; min-width:0}
+.guard .against{background:var(--no-bg)}
+.guard .against h3{color:var(--no)}
+.guard .yours{background:var(--surface-2)}
+.guard h3{font-size:1.02rem}
+.guard ul{margin:0; padding-left:20px; display:grid; gap:6px}
+.guard .tag{font-size:.75rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--muted)}
+
+.act{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:16px; display:grid; gap:12px; min-width:0}
+.act.passed{border-color:var(--ok)}
+.act .ap{font-weight:700}
+.act .status{font-size:.9rem; color:var(--muted)}
+.act.passed .status{color:var(--ok); font-weight:700}
+.tray{display:flex; flex-wrap:wrap; gap:8px}
+.item{background:var(--surface-2); border:1.5px solid var(--line); border-radius:10px; padding:9px 12px; text-align:left; font-size:.95rem; max-width:100%}
+.item.sel{border-color:var(--gold-hi); box-shadow:0 0 0 3px color-mix(in srgb, var(--gold-hi) 35%, transparent)}
+.buckets{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:10px}
+.bucket{border:2px dashed var(--line); border-radius:12px; padding:10px; display:grid; gap:8px; align-content:start; min-height:90px; min-width:0; cursor:pointer}
+.bucket.ready{border-color:var(--gold-hi); background:color-mix(in srgb, var(--gold-hi) 8%, transparent)}
+.bucket > b{font-size:.95rem}
+.placed{background:var(--ok-bg); border:1px solid var(--ok); border-radius:9px; padding:8px 10px; font-size:.9rem}
+.placed small{display:block; color:var(--muted); margin-top:3px}
+.shake{animation:shake .35s}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.msg{font-size:.92rem; padding:8px 12px; border-radius:9px}
+.msg.no{background:var(--no-bg); color:var(--no)}
+.msg.ok{background:var(--ok-bg); color:var(--ok)}
+.q{display:grid; gap:8px}
+.q + .q{border-top:1px solid var(--line); padding-top:14px}
+.opts{display:grid; gap:8px}
+.opt{background:var(--surface-2); border:1.5px solid var(--line); border-radius:10px; padding:10px 12px; text-align:left}
+.opt:hover:not([disabled]){border-color:var(--sea)}
+.opt.right{background:var(--ok-bg); border-color:var(--ok)}
+.opt.wrong{background:var(--no-bg); border-color:var(--no); text-decoration:line-through; opacity:.8}
+.opt[disabled]{cursor:default}
+
+/* decisions */
+.scene{background:linear-gradient(160deg, var(--band1), var(--band2)); color:var(--on-band); border-radius:var(--r); padding:18px; display:grid; gap:8px}
+.scene .tag{font-size:.75rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--gold-hi)}
+.scene h3{font-family:var(--f-display); font-weight:400; font-size:1.5rem; color:#fff}
+.scene p{color:var(--on-band); max-width:68ch}
+.paths{display:grid; gap:10px}
+.path{text-align:left; background:var(--surface); border:1.5px solid var(--line); border-radius:14px; padding:12px 14px; display:grid; gap:6px}
+.path:hover:not([disabled]){border-color:var(--gold-hi)}
+.path[disabled]{cursor:default}
+.path .lead{display:flex; gap:10px; align-items:flex-start}
+.path .lead i{font-style:normal; font-weight:700; width:26px; height:26px; flex:none; border-radius:50%; background:var(--surface-2); display:grid; place-items:center; font-size:.85rem}
+.path .out{display:grid; gap:4px; font-size:.94rem; border-top:1px dashed var(--line); padding-top:8px}
+.path .out em{font-style:normal; color:var(--muted)}
+.verdict{font-size:.72rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:3px 10px; border-radius:999px; width:fit-content}
+.v2{background:var(--ok-bg); color:var(--ok)} .v1{background:var(--mid-bg); color:var(--mid)} .v0{background:var(--no-bg); color:var(--no)}
+.path.chosen{border-width:2.5px}
+.path.chosen.s2{border-color:var(--ok)} .path.chosen.s1{border-color:var(--mid)} .path.chosen.s0{border-color:var(--no)}
+.path.faded{opacity:.86}
+
+textarea, .field input, .field select{width:100%; border:1.5px solid var(--line); border-radius:12px; background:var(--surface); color:var(--fg); font:inherit; padding:12px 14px; resize:vertical}
+textarea{min-height:140px}
+.wc{font-size:.88rem; color:var(--muted); font-variant-numeric:tabular-nums}
+.wc.ok{color:var(--ok); font-weight:700}
+
+.btn{background:var(--btn); color:var(--on-btn); border:none; border-radius:999px; padding:10px 20px; font-weight:700; width:fit-content}
+.btn.ghost{background:transparent; color:var(--fg); border:1.5px solid var(--line)}
+.btn.big{font-size:1.05rem; padding:13px 26px; background:var(--gold-hi); color:#0d1a33}
+.btn[disabled]{opacity:.45; cursor:not-allowed}
+
+.gate{background:var(--surface-2); border-radius:18px; padding:20px; display:grid; gap:12px; justify-items:start; margin-block:30px 10px}
+.gate h2{font-size:1.35rem; font-family:var(--f-display); font-weight:400}
+.gate ul{margin:0; padding:0; list-style:none; display:grid; gap:6px}
+.gate li{display:flex; gap:8px; align-items:baseline}
+.gate li::before{content:"\25CB "; color:var(--muted); font-weight:700}
+.gate li.ok::before{content:"\2713 "; color:var(--ok)}
+
+/* covenant builder */
+.bp{display:grid; gap:16px}
+.bp fieldset{border:1px solid var(--line); border-radius:var(--r); padding:14px 16px 16px; margin:0; display:grid; gap:12px; background:var(--surface); min-width:0}
+.bp legend{font-weight:700; padding:0 6px; color:var(--wine)}
+.field{display:grid; gap:6px}
+.field label{font-weight:700}
+.field .hint{font-size:.88rem; color:var(--muted)}
+.field textarea{min-height:90px}
+.checks{display:grid; gap:8px}
+.checks label{display:flex; gap:10px; align-items:flex-start; font-weight:400}
+.checks input{width:20px; height:20px; margin-top:3px; accent-color:var(--olive); flex:none}
+.covenant{background:var(--surface); border:3px double var(--gold); border-radius:18px; padding:22px 20px; display:grid; gap:12px; min-width:0}
+.covenant h3{font-family:var(--f-display); font-weight:400; font-size:1.7rem; text-align:center}
+.covenant h4{margin:6px 0 0; font-size:.8rem; letter-spacing:.12em; text-transform:uppercase; color:var(--wine)}
+.covenant ul{margin:0; padding-left:20px; display:grid; gap:4px}
+.covenant .meta{text-align:center; color:var(--muted); font-size:.9rem}
+.covenant blockquote{margin:0; font-family:var(--f-display); font-size:1.1rem; text-align:center; color:var(--gold)}
+.row{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+
+/* passport */
+.stamps{display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:12px}
+.stamp{aspect-ratio:1/1; max-width:100%; border:2px dashed var(--line); border-radius:50%; display:grid; place-items:center; text-align:center; padding:14px; font-size:.8rem; color:var(--muted)}
+.stamp.got{border:3px double var(--wine); color:var(--wine); transform:rotate(-6deg); background:color-mix(in srgb, var(--wine) 6%, transparent)}
+.stamp b{display:block; font-family:var(--f-display); font-weight:400; font-size:1.02rem}
+.compass{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:16px; display:grid; gap:10px}
+.compass .bar2{height:12px; border-radius:9px; background:var(--surface-2); overflow:hidden}
+.compass .bar2 div{height:100%; background:linear-gradient(90deg, var(--olive), var(--gold-hi))}
+.dlist{display:grid; gap:8px; margin:0; padding:0; list-style:none}
+.dlist li{display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; border-top:1px solid var(--line); padding-top:8px}
+.refl{display:grid; gap:10px}
+.refl article{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:12px 14px; display:grid; gap:4px}
+.refl article p{white-space:pre-wrap; font-size:.95rem}
+.cert{border:3px double var(--gold); border-radius:20px; padding:28px 22px; text-align:center; display:grid; gap:10px; background:var(--surface); justify-items:center}
+.cert h2{font-family:var(--f-display); font-weight:400; font-size:clamp(1.7rem,4vw,2.5rem); color:var(--wine)}
+.cert .nm{font-size:1.6rem; font-weight:700; border-bottom:2px solid var(--line); padding-bottom:4px; min-width:min(320px,100%)}
+.cert code{font-size:1rem; background:var(--surface-2); padding:4px 10px; border-radius:8px; font-variant-numeric:tabular-nums}
+
+/* overlay + toast */
+.overlay{position:fixed; inset:0; background:rgba(6,13,36,.6); display:grid; place-items:center; z-index:50; padding:20px}
+.overlay .panel{background:var(--surface); border-radius:22px; padding:28px 24px; max-width:420px; width:100%; text-align:center; display:grid; gap:12px; justify-items:center; box-shadow:var(--shadow)}
+.bigstamp{width:150px; height:150px; border-radius:50%; border:5px double var(--wine); color:var(--wine); display:grid; place-items:center; font-family:var(--f-display); font-size:1.1rem; padding:16px; transform:rotate(-8deg); animation:thump .5s ease-out}
+@keyframes thump{0%{transform:scale(2.2) rotate(-8deg); opacity:0}70%{transform:scale(.92) rotate(-8deg); opacity:1}100%{transform:scale(1) rotate(-8deg)}}
+.toast{position:fixed; left:50%; bottom:calc(20px + env(safe-area-inset-bottom,0px)); transform:translateX(-50%); background:var(--band1); color:var(--on-band); padding:10px 18px; border-radius:999px; z-index:60; font-size:.95rem; box-shadow:var(--shadow); max-width:calc(100% - 32px); text-align:center}
+.preview-flag{background:var(--gold-hi); color:#0d1a33; text-align:center; font-weight:700; font-size:.85rem; padding:4px}
+
+footer{border-top:1px solid var(--line); margin-top:30px}
+footer .wrap{padding-block:18px 26px; color:var(--muted); font-size:.88rem; display:flex; gap:8px 20px; flex-wrap:wrap; justify-content:space-between}
+@media (prefers-reduced-motion: reduce){ .wave,.pin.cur .dot,.bigstamp,.shake{animation:none} *{transition:none!important} }
+</style>
+
+<div id="previewFlag" class="preview-flag" hidden>Facilitator preview: every zone is unlocked. Progress here is for testing only.</div>
+<header class="bar">
+  <div class="wrap">
+    <button type="button" class="brand" data-go="home">Kingdom Crossroads</button>
+    <div class="meter" aria-label="Journey progress"><span id="meterTxt">0 stamps</span><div class="track"><div class="fill" id="meterFill"></div></div></div>
+    <button type="button" class="nav" data-go="home">Map</button>
+    <button type="button" class="nav" data-go="passport">My passport</button>
+  </div>
+</header>
+<main id="app"></main>
+<footer>
+  <div class="wrap">
+    <span>Kingdom Crossroads: AI and the Church. Concept, design and content &#xA9; 2026 Dr. Rohan Jowallah, Ed.D., FHEA. All rights reserved.</span>
+    <span>Scripture quotations from the King James Version. Your progress is saved in this browser only.</span>
+  </div>
+</footer>
+
+<script>
+/* =====================================================================
+   KINGDOM CROSSROADS: AI AND THE CHURCH
+   (c) 2026 Dr. Rohan Jowallah, Ed.D., FHEA. All rights reserved.
+
+   >>> EASY EDITS FOR THE AUTHOR <<<
+   1. YOUR MAP: save the village painting next to this page as
+      village-map.png (or .jpg / .jpeg / .webp). The page finds it
+      automatically. If no image is found, a drawn map is shown instead.
+   2. ZONE POSITIONS: MAP_PINS gives each zone's spot on the painting as
+      [percent from left, percent from top]. They sit on the painting's
+      landmarks: ruined arches, waterfall, hill path, scrolls and Bible,
+      sheep, rock-cut store, village houses, the cross, and the pergola.
+   ===================================================================== */
+const MAP_IMAGES = ["village-map.webp", "village-map.png", "village-map.jpg", "village-map.jpeg"];
+const MAP_RATIO = "16 / 10";
+const MAP_PINS = {
+  z1:[62.2,54.4], z2:[74.8,68.0], z3:[53.9,39.3], z4:[25.7,81.8], z5:[86.7,74.9],
+  z6:[89.1,43.6], z7:[71.8,31.7], z8:[84.0,19.4], z9:[31.4,58.2],
+  z10:[52.0,61.0]
+};
+/* 3. CRISIS CONTACTS: list the people and lines members should call, e.g.
+      { name:"Pastoral care line", contact:"876-000-0000", note:"24 hours" }
+      These appear in the Shepherd's Fold zone. Leave empty until confirmed. */
+const HELP_CONTACTS = [];
+
+/* Plain-English meaning shown under each King James verse (our own wording). */
+const PLAIN = {
+  "Habakkuk 2:2":"Write the vision down clearly, so that anyone who reads it can act on it.",
+  "Proverbs 29:18":"Without a vision from God, people lose their way.",
+  "James 1:5":"If you need wisdom, ask God. He gives generously and does not scold you for asking.",
+  "Proverbs 3:5":"Trust God completely, and do not rely only on your own understanding.",
+  "1 Thessalonians 5:21":"Test everything, and keep what is good.",
+  "Acts 17:11":"They welcomed the message eagerly and checked the Scriptures every day to see if it was true.",
+  "2 Timothy 2:15":"Work hard to be someone God approves of, who handles the word of truth correctly.",
+  "John 16:13":"When the Holy Spirit comes, He will lead you into all truth.",
+  "John 10:11":"Jesus is the good shepherd, who gives His life for His sheep.",
+  "Romans 12:15":"Celebrate with people who are happy, and weep with people who are grieving.",
+  "Proverbs 22:6":"Teach children the right way to live, and they will keep to it as they grow.",
+  "1 Timothy 4:12":"Don't let anyone look down on you for being young. Set an example in how you speak, live, love, believe and stay pure.",
+  "1 Corinthians 4:2":"Anyone trusted with something must prove faithful with it.",
+  "Proverbs 11:13":"A gossip gives away secrets, but a trustworthy person keeps a confidence.",
+  "Proverbs 11:1":"God hates dishonest scales, but honest dealing delights Him.",
+  "Micah 6:8":"God asks us to act justly, love mercy, and walk humbly with Him.",
+  "Psalm 20:7":"Some trust in military power, but we trust in the name of the Lord our God.",
+  "Jeremiah 17:7":"Blessed is the person who trusts in the Lord and puts their hope in Him.",
+  "Acts 15:28":"The Holy Spirit and the church leaders agreed not to add any burden beyond what was necessary.",
+  "Proverbs 15:22":"Plans fail without advice, but with many advisers they succeed."
+};
+function nextMap(img){
+  const i = +img.dataset.i + 1;
+  if(i < MAP_IMAGES.length){ img.dataset.i = i; img.src = MAP_IMAGES[i]; } else img.remove();
+}
+function mapLoaded(img){
+  img.hidden = false;
+  img.parentNode.style.setProperty("--map-ratio", img.naturalWidth + " / " + img.naturalHeight);
+  const svg = img.parentNode.querySelector("svg"); if(svg) svg.remove();
+}
+
+const ZONES = [
+/* ------------------------------------------------------------------ 1 */
+{ id:"z1", num:1, name:"Vision Gate", theme:"The vision comes before the tool", building:"gate",
+  keepsake:"Vision Scroll",
+  bigIdea:"A church that does not know where God is leading it will let its tools decide. Settle the vision first. Then ask whether AI serves it.",
+  word:[
+    { ref:"Habakkuk 2:2", text:"Write the vision, and make it plain upon tables, that he may run that readeth it." },
+    { ref:"Proverbs 29:18", text:"Where there is no vision, the people perish." }
+  ],
+  concepts:[
+    { term:"Church vision", def:"The direction a congregation believes God has given it: who it serves, what it is called to do and how. It is the test every new tool must pass.", ex:"A church called to reach young families in its parish asks whether an AI tool helps that calling or only saves the office time." },
+    { term:"A tool, not a master", def:"AI is a tool made by people and companies. A tool serves a purpose someone else sets. When the tool starts setting the purpose, it has become a master.", ex:"Choosing a sermon series because an app said it was trending, rather than because the elders prayed and agreed." },
+    { term:"Mission drift", def:"Moving slowly away from the calling because something new is easier, cheaper or more exciting.", ex:"Spending the outreach budget on AI video software while the visitation team has no transport." },
+    { term:"Shared discernment", def:"Decisions about AI belong to the leadership together, in prayer and conversation, not to the most tech-savvy person alone.", ex:"The media team proposes a chatbot. The pastor and deacons weigh it against the vision before it goes live." }
+  ],
+  guard:["Adopting AI because other churches are doing it.","Letting the most technical person set the rules alone.","Measuring ministry by efficiency instead of faithfulness."],
+  tracks:{ member:"Find or ask for your church's vision statement. Write it in your own words.", leader:"Before approving any AI tool, ask: which part of our vision does this serve? If no one can answer, wait." },
+  practise:{ type:"sort", prompt:"Is the tool serving the vision or driving it?",
+    buckets:["Tool serving the vision","Tool driving the vision"],
+    items:[
+      { t:"Using AI to translate the bulletin into Spanish for the new families the church is called to welcome.", b:0, why:"The calling came first. The tool helps fulfil it." },
+      { t:"Starting a podcast only because an AI tool makes one easy to produce.", b:1, why:"The tool's ease set the direction, not a discerned call." },
+      { t:"Using AI to draft a volunteer rota for the feeding programme, then checking it with the coordinator.", b:0, why:"It serves an existing ministry, with a person in charge." },
+      { t:"Letting an app pick next year's sermon themes from online trends.", b:1, why:"Trends replaced prayer and the leaders' discernment." },
+      { t:"Turning on AI captions so members with hearing loss can follow the livestream.", b:0, why:"It serves the call to include every member of the body." },
+      { t:"Cutting the hospital visitation team because an AI prayer app \u201Creaches more people\u201D.", b:1, why:"Efficiency replaced presence. The tool redefined the ministry." }
+    ] },
+  decide:{ title:"The chatbot proposal",
+    scenario:"A keen young member offers to put an AI chatbot on the church website to answer questions about the faith, day and night. The board meets on Tuesday.",
+    options:[
+      { t:"Approve it now. It is free and other churches have one.", s:0, result:"The bot goes live. Within a month it tells a visitor something about baptism that contradicts your church's teaching.", why:"Speed and imitation replaced discernment. \u201CWithout counsel purposes are disappointed\u201D (Proverbs 15:22)." },
+      { t:"Thank the member, then have the leaders test it against the church's vision and teaching and decide what it may and may not answer.", s:2, result:"The leaders limit it to service times, directions and events. Faith questions go to a named person.", why:"The vision and teaching set the limits. The tool serves inside them." },
+      { t:"Reject it outright. AI has no place in church.", s:1, result:"The member feels dismissed, and visitors lose a simple way to find service times.", why:"Caution is wise, but refusing without discernment is also a decision made without counsel." }
+    ] },
+  reflection:"Write your church's vision in one or two sentences, as you understand it. Then name one way AI could serve that vision and one way it could pull the church away from it."
+},
+/* ------------------------------------------------------------------ 2 */
+{ id:"z2", num:2, name:"Well of Wisdom", theme:"What AI is, and what it is not", building:"well",
+  keepsake:"Clay Water Jar",
+  bigIdea:"Generative AI predicts likely words from patterns in huge amounts of text. It can be useful, but it does not know God, believe anything or care for anyone.",
+  word:[
+    { ref:"James 1:5", text:"If any of you lack wisdom, let him ask of God, that giveth to all men liberally, and upbraideth not; and it shall be given him." },
+    { ref:"Proverbs 3:5", text:"Trust in the LORD with all thine heart; and lean not unto thine own understanding." }
+  ],
+  concepts:[
+    { term:"Generative AI", def:"Software that produces text, images, audio or video on request. ChatGPT, Claude, Gemini and Copilot are examples.", ex:"Asking a chatbot to draft a thank-you letter to volunteers." },
+    { term:"Prediction, not knowledge", def:"These tools predict which words are likely to come next, based on patterns in the text they were trained on. Sounding confident is not the same as being right.", ex:"A chatbot can write a fluent paragraph about a Bible passage and still misquote the verse." },
+    { term:"Information is not wisdom", def:"AI can gather and arrange information quickly. Scripture describes wisdom as coming from God and showing itself in a godly life (James 3:17). No program has that.", ex:"AI can list five views on forgiveness. It cannot tell a hurting member which step God is asking of them." },
+    { term:"No conscience, no relationship", def:"AI has no faith, no conscience and no love. It may sound caring because it copies caring language.", ex:"A chatbot writes \u201CI am praying for you.\u201D It is not." },
+    { term:"Trained on human words", def:"AI learns from human writing, with all its truths, errors and biases. What it says reflects its sources and the choices of the company that built it.", ex:"Two chatbots can give different answers to the same question about the Trinity." }
+  ],
+  guard:["Treating confident answers as true answers.","Speaking of AI as if it understands, believes or prays.","Asking a machine for the wisdom we should seek from God and godly counsel."],
+  tracks:{ member:"Next time you use an AI tool, remind yourself: this is a prediction, not a person.", leader:"Explain to your congregation in plain words what AI is, so that neither fear nor hype takes hold." },
+  practise:{ type:"mcq", prompt:"Check your understanding.",
+    questions:[
+      { q:"How does a chatbot like ChatGPT mainly produce its answers?", options:["It looks each answer up in a checked database","It predicts likely words from patterns in its training text","It is guided by the Holy Spirit","A person types each reply"], a:1, why:"It predicts. That is why it can be fluent and wrong at the same time." },
+      { q:"A chatbot ends with \u201CI'm praying for you and your family.\u201D What is true?", options:["The chatbot is praying","It is copying caring language and cannot pray","It means a church member will pray","It has a spiritual gift"], a:1, why:"It has no spirit, faith or will. Real prayer needs real people." },
+      { q:"Where does James 1:5 tell us to seek wisdom?", options:["From many sources, machines included","From God, who gives liberally","From our own understanding","From the newest technology"], a:1, why:"\u201CLet him ask of God, that giveth to all men liberally.\u201D" }
+    ] },
+  decide:{ title:"The question at midnight",
+    scenario:"A new believer messages you: \u201CI asked an AI app whether God can forgive what I did. It gave me a long answer. Is that enough?\u201D",
+    options:[
+      { t:"Tell them the AI answer is probably fine.", s:0, result:"They hold on to a machine's answer about grace and miss the assurance of the Word and the care of other believers.", why:"AI can describe forgiveness. It cannot minister it." },
+      { t:"Open the Scriptures with them (for example 1 John 1:9), pray with them, and connect them with a pastor or mentor.", s:2, result:"They hear the promise from God's Word and know they are not alone.", why:"Wisdom from God, shared in the body of Christ (James 1:5)." },
+      { t:"Tell them never to use AI again.", s:1, result:"They feel scolded and may stop bringing their questions to you.", why:"The real need was the Word and a person, not only a warning." }
+    ] },
+  reflection:"Before today, how did you think AI \u201Cknows\u201D things? Name one question you would take to an AI tool and one you would take only to God, the Scriptures or a trusted believer."
+},
+/* ------------------------------------------------------------------ 3 */
+{ id:"z3", num:3, name:"Watchtower", theme:"Discernment and truth", building:"tower",
+  keepsake:"Watchman's Lamp",
+  bigIdea:"AI can invent facts, quotes and Bible references, and it can fake voices and faces. A watchful church tests what it receives before it repeats it.",
+  word:[
+    { ref:"1 Thessalonians 5:21", text:"Prove all things; hold fast that which is good." },
+    { ref:"Acts 17:11", text:"They received the word with all readiness of mind, and searched the scriptures daily, whether those things were so." }
+  ],
+  concepts:[
+    { term:"Made-up answers", def:"AI sometimes states false things as fact, often with invented sources. Every current chatbot has this weakness, which is often called \u201Challucination\u201D.", ex:"A chatbot gives a sermon quote \u201Cfrom Spurgeon\u201D that Spurgeon never wrote." },
+    { term:"Wrong verses", def:"AI may attach the wrong reference to a verse, blend two verses, or produce words that are not in the Bible at all.", ex:"\u201CGod helps those who help themselves\u201D is not in Scripture, but AI may present it as if it were." },
+    { term:"Deepfakes", def:"AI-made audio, images or video that look and sound real. They can put words in a pastor's mouth.", ex:"A voice note in the pastor's voice asks members to send money for an emergency. The pastor never recorded it." },
+    { term:"The Berean habit", def:"Checking every claim against Scripture and reliable sources before believing or sharing it.", ex:"Opening a Bible to confirm every verse an AI tool quotes before it goes on a slide." },
+    { term:"Check before you share", def:"Ask three questions. Who made this? Can I confirm it in a second, trusted source? Would it hurt someone if it is false?", ex:"Calling the church office before forwarding an \u201Curgent announcement\u201D." }
+  ],
+  guard:["Putting AI-quoted verses on screen without checking a Bible.","Forwarding shocking videos or voice notes before confirming them.","Giving money in response to messages that only sound like a leader."],
+  tracks:{ member:"Before you forward any church message, voice note or video, confirm it with the person or office it claims to come from.", leader:"Agree on a rule that the church never asks for money by voice note or text alone, and announce it so members can spot fakes." },
+  practise:{ type:"sort", prompt:"Stop and check, or reasonably safe?",
+    buckets:["Stop and check first","Reasonably safe to use"],
+    items:[
+      { t:"An AI tool quotes Jeremiah 29:11 for your slide.", b:0, why:"Even familiar verses get misquoted. Checking a Bible takes a minute." },
+      { t:"A WhatsApp voice note in the bishop's voice asks for urgent donations to a new account.", b:0, why:"Urgency, money and a new account are the classic signs of a fake. Call the office." },
+      { t:"Service times printed in your church's own bulletin.", b:1, why:"A known, trusted source you can confirm." },
+      { t:"A chatbot says a famous preacher wrote a quote you want to use.", b:0, why:"Quotes are often invented. Find the original or leave it out." },
+      { t:"A shocking video of a pastor that is spreading fast online.", b:0, why:"Video can now be faked. Wait for a reliable source." },
+      { t:"A verse you looked up yourself in your printed Bible.", b:1, why:"You went to the source." }
+    ] },
+  decide:{ title:"The voice note",
+    scenario:"On Saturday night the church treasurer gets a voice note that sounds exactly like the pastor: \u201CFamily emergency. Please send the building fund to this account tonight. Don't tell anyone yet.\u201D",
+    options:[
+      { t:"Send it. It is clearly the pastor's voice.", s:0, result:"The money is gone. The pastor was asleep at home. The voice had been cloned from sermons posted online.", why:"Urgency, secrecy and money together are a warning sign. \u201CProve all things\u201D (1 Thessalonians 5:21)." },
+      { t:"Call the pastor on a number you already know, and follow the church's two-signature rule before any payment.", s:2, result:"The pastor answers, confused. The fraud is stopped and reported, and the church warns its members.", why:"Testing before trusting protects the flock and the offering." },
+      { t:"Ignore it and say nothing.", s:1, result:"No money is lost, but other members may receive the same message and not know it is fake.", why:"A watchman warns others too (Ezekiel 33:6)." }
+    ] },
+  reflection:"Describe a time you or someone you know believed or shared something that was not true. What simple check would have caught it? Write a check your church could adopt."
+},
+/* ------------------------------------------------------------------ 4 */
+{ id:"z4", num:4, name:"Scribe's House", theme:"Scripture, sermons and AI", building:"house",
+  keepsake:"Scribe's Quill",
+  bigIdea:"AI can help with background research and wording. It cannot replace prayerful study of the Word or the leading of the Holy Spirit. A sermon is a pastor's word to a flock they know and love.",
+  word:[
+    { ref:"2 Timothy 2:15", text:"Study to shew thyself approved unto God, a workman that needeth not to be ashamed, rightly dividing the word of truth." },
+    { ref:"John 16:13", text:"Howbeit when he, the Spirit of truth, is come, he will guide you into all truth." }
+  ],
+  concepts:[
+    { term:"Study comes first", def:"Read the passage, pray over it and wrestle with it before opening any AI tool. Otherwise the tool frames the passage for you.", ex:"A preacher lives with Psalm 23 for a week, then asks AI for background on shepherding in Bible times." },
+    { term:"Fitting uses", def:"Summarising background, suggesting discussion questions, checking grammar, simplifying language for children and translating. A person checks every result.", ex:"Asking AI to rewrite a Bible study sheet for 10-year-olds, then reading it carefully before class." },
+    { term:"Doctrinal drift", def:"AI blends many traditions. Its answers can quietly carry beliefs your church does not hold.", ex:"A generated outline on baptism assumes a view different from your church's statement of faith." },
+    { term:"Honest authorship", def:"If AI wrote a large part of a sermon, devotion or article, people should not be led to think the preacher wrote it alone.", ex:"A pastor tells the team that AI drafted the study guide, which the pastor then rewrote." },
+    { term:"The Spirit and the shepherd", def:"Jesus promised that the Spirit of truth would guide His people into all truth (John 16:13). A pastor also knows the flock: who is grieving and who is struggling. AI knows neither." }
+  ],
+  guard:["Preaching AI-written sermons as your own.","Letting AI decide what a passage means.","Skipping personal study because a draft is one click away."],
+  tracks:{ member:"If you use AI at all, use it after you have read the passage yourself. Bring your questions to Bible study, not only to an app.", leader:"Agree as a team on which parts of sermon and lesson preparation may use AI, and say so openly." },
+  practise:{ type:"sort", prompt:"Fitting help, or a line crossed?",
+    buckets:["Fitting help, with checking","Crosses the line"],
+    items:[
+      { t:"Asking AI for the history of Corinth before preaching from 1 Corinthians.", b:0, why:"Background research, checked against good sources." },
+      { t:"Generating a whole Sunday sermon and preaching it word for word as your own.", b:1, why:"It replaces study and misleads the congregation." },
+      { t:"Asking AI for discussion questions for a small group, then choosing and editing them.", b:0, why:"Support for a leader who still leads." },
+      { t:"Teaching what AI says a passage means without praying or opening a commentary.", b:1, why:"The tool has become the interpreter." },
+      { t:"Using AI to check spelling and grammar in the newsletter.", b:0, why:"A clerical aid." },
+      { t:"Using AI to produce a \u201Cword from the Lord\u201D for a member.", b:1, why:"Prophecy and spiritual counsel cannot come from a machine." }
+    ] },
+  decide:{ title:"The busy week",
+    scenario:"It is Friday. A funeral, two hospital visits and a board meeting have filled your week, and Sunday's sermon is not prepared. A colleague says: \u201CJust let AI write it. Nobody will know.\u201D",
+    options:[
+      { t:"Generate a sermon and preach it as usual.", s:0, result:"It sounds polished but generic, and it misses the grief the church is carrying after this week's funeral.", why:"It misleads the flock and skips the study Scripture asks of a workman (2 Timothy 2:15)." },
+      { t:"Pray, choose a passage you know well, and prepare a shorter message yourself, using AI only to check background facts.", s:2, result:"The message is simpler, but it speaks to the people who will be in the room on Sunday.", why:"A pastor's own word to their own flock." },
+      { t:"Ask an elder or associate to preach this week, and build more breathing room into future weeks.", s:2, result:"The pulpit is shared, and the pastor rests.", why:"Shared ministry is wisdom too: \u201Cthou art not able to perform it thyself alone\u201D (Exodus 18:18)." }
+    ] },
+  reflection:"How do you prepare to share God's Word: a sermon, a lesson, a devotion? Write where AI might help you, and where you will not let it in."
+},
+/* ------------------------------------------------------------------ 5 */
+{ id:"z5", num:5, name:"Shepherd's Fold", theme:"Pastoral care needs presence", building:"fold", help:true,
+  keepsake:"Shepherd's Crook",
+  bigIdea:"People in pain need a person, not a program. AI can help organise care, but it must never replace the presence and prayer of the body of Christ.",
+  word:[
+    { ref:"John 10:11", text:"I am the good shepherd: the good shepherd giveth his life for the sheep." },
+    { ref:"Romans 12:15", text:"Rejoice with them that do rejoice, and weep with them that weep." }
+  ],
+  concepts:[
+    { term:"Ministry of presence", def:"Being with people in their joy and sorrow. Much of pastoral care is simply showing up.", ex:"Sitting with a widow at the hospital, saying little, praying briefly." },
+    { term:"AI companions", def:"Apps that chat like a friend or counsellor. Lonely people in particular can grow attached to them.", ex:"An elderly member says she talks to an AI app every night because no one calls." },
+    { term:"Limits in a crisis", def:"AI tools are not safe counsellors for suicidal thoughts, abuse or serious mental illness. These need trained people and, where needed, professional and emergency help.", ex:"A teenager tells a chatbot about self-harm. The chatbot cannot visit, call a parent or sit with them." },
+    { term:"Care admin done well", def:"AI and simple apps can help with reminders, visit rotas and birthday lists, so leaders have more time for people.", ex:"The care team uses a shared calendar so no shut-in goes three weeks without a visit." }
+  ],
+  guard:["Sending AI-written condolences instead of calling or visiting.","Pointing lonely members to AI companions instead of fellowship.","Letting AI screen or answer crisis messages."],
+  tracks:{ member:"Think of someone in your congregation who has no one checking on them. Call them this week.", leader:"Make sure every crisis message reaches a trained person quickly, and tell members where to get help." },
+  practise:{ type:"mcq", prompt:"Choose the caring response.",
+    questions:[
+      { q:"A grieving member messages the church. What is the best use of technology here?", options:["Let AI write and send the condolence reply","Use reminders so the care team visits and follows up","Suggest an AI grief app","No reply is needed"], a:1, why:"Technology can help organise the care. People give it." },
+      { q:"Romans 12:15 asks believers to\u2026", options:["Find the most efficient way to help","Rejoice with them that do rejoice, and weep with them that weep","Leave all counselling to experts","Pray from a distance"], a:1, why:"Care means shared feeling and presence." },
+      { q:"Someone tells the church chatbot they are thinking of ending their life. What should already be in place?", options:["The chatbot handles it","A clear route to a trained person and emergency services","Nothing, because it is rare","An automatic Bible verse reply"], a:1, why:"A crisis needs people and professional help at once. Plan for it before it happens." }
+    ] },
+  decide:{ title:"Sister Ruth",
+    scenario:"Sister Ruth, 82, lives alone. Her son suggests the church give her a tablet with an AI companion app \u201Cso she has someone to talk to\u201D. The care team is stretched.",
+    options:[
+      { t:"Agree. It solves the problem.", s:0, result:"Ruth chats with the app every night. Visits drop off because \u201Cshe has company now\u201D.", why:"The tool replaced the fellowship. The good shepherd knows his sheep (John 10:14)." },
+      { t:"Set up a rota of members to call and visit, and help her video-call her family. Any app is an extra, never a replacement.", s:2, result:"Ruth has weekly visitors and talks to her grandchildren. She feels part of the church again.", why:"\u201CBear ye one another's burdens\u201D (Galatians 6:2)." },
+      { t:"Tell her son the church is too busy to help.", s:0, result:"Ruth stays alone.", why:"Neglect is a decision too." }
+    ] },
+  reflection:"Think of someone in your church family who is lonely, sick or grieving. What will you do for them this week that no AI could do?"
+},
+/* ------------------------------------------------------- youth (z10) */
+{ id:"z10", name:"Generations Bridge", theme:"Children, young people and AI", building:"bridge",
+  keepsake:"Bridge Stone",
+  bigIdea:"Many children and teenagers use AI more than the adults who lead them do. The church's task is to walk with them: teach discernment, protect them from harm, and show them a faith that does not depend on a screen.",
+  word:[
+    { ref:"Proverbs 22:6", text:"Train up a child in the way he should go: and when he is old, he will not depart from it." },
+    { ref:"1 Timothy 4:12", text:"Let no man despise thy youth; but be thou an example of the believers, in word, in conversation, in charity, in spirit, in faith, in purity." }
+  ],
+  concepts:[
+    { term:"They are already using it", def:"Many children and teenagers use AI chatbots for homework, advice and company, often without the adults around them knowing.", ex:"A Grade 9 student asks a chatbot about a family problem before telling anyone at home or at church." },
+    { term:"Homework and honesty", def:"Using AI to learn is different from handing in AI work as your own. Schools set their own rules; honesty is the Christian rule everywhere.", ex:"Asking AI to explain photosynthesis is learning. Submitting an AI-written essay as your own is cheating." },
+    { term:"Companion apps", def:"Some apps are built to feel like a friend or a romantic partner. Young people can become emotionally dependent on them, and some have drawn children into harmful conversations.", ex:"A lonely 14-year-old spends hours every night chatting with an AI \u201Cfriend\u201D and stops seeing real ones." },
+    { term:"Fake images and bullying", def:"AI can make realistic fake photos of real people, including sexual images. Making or sharing such images of a child is abuse, and in many countries it is a crime.", ex:"A student's face is put on a fake picture and shared in a class group chat." },
+    { term:"Walk with them", def:"Bans alone rarely work. Ask young people what they use, set boundaries together at home and at church, and keep the door open for hard conversations.", ex:"A youth leader asks the group to show which AI apps they use, and they talk about them openly." }
+  ],
+  guard:["Assuming young people don't use AI because the adults don't.","Ignoring AI companions and fake-image bullying in the youth group.","Using children's photos, names or voices in AI tools without parents' consent."],
+  tracks:{ member:"If you are a parent, grandparent or guardian, ask the young people in your home which AI tools they use and what for. Listen before you lecture.", leader:"Give youth workers a clear plan for reporting fake-image abuse and other safeguarding concerns, and offer parents a session on AI." },
+  practise:{ type:"sort", prompt:"Healthy for a young person, or time for an adult to step in?",
+    buckets:["Healthy use","An adult needs to step in"],
+    items:[
+      { t:"A student asks AI to explain a maths problem step by step, then solves the next one alone.", b:0, why:"Learning, with the student still doing the thinking." },
+      { t:"A teenager hands in an AI-written essay as their own work.", b:1, why:"It is dishonest and skips the learning. Talk about it calmly." },
+      { t:"A child chats every night with an AI \u201Cgirlfriend\u201D app and has stopped seeing friends.", b:1, why:"Emotional dependence and isolation. A caring adult needs to step in." },
+      { t:"The youth group uses AI to brainstorm names for its next mission project.", b:0, why:"Creative help in a shared, supervised activity." },
+      { t:"A fake image of a church teenager is spreading in a group chat.", b:1, why:"This is abuse. Protect the young person, follow safeguarding steps and report it." },
+      { t:"A teenager asks AI for Bible verses about anxiety, then brings them to a youth leader.", b:0, why:"Seeking, and then bringing it to a person." }
+    ] },
+  decide:{ title:"The group chat",
+    scenario:"A 15-year-old in your youth group tells you, in tears, that a classmate used AI to make a fake image of her and shared it in a school group chat. She begs you not to tell her parents.",
+    options:[
+      { t:"Promise to keep it secret, and pray with her.", s:0, result:"She feels heard for a moment, but the image keeps spreading and no adult who can stop it ever acts.", why:"Secrecy cannot cover harm to a child. Protecting her comes before keeping a promise you should not make." },
+      { t:"Comfort her, explain gently that you must tell the people who can protect her, and follow your church's safeguarding steps: her parents, your safeguarding lead, the school and, if needed, the police.", s:2, result:"It is hard at first, but the adults act together, the image is reported and removed, and she is not left alone with it.", why:"Protecting the vulnerable is part of doing justly (Micah 6:8)." },
+      { t:"Tell her to ignore it. It will blow over.", s:0, result:"The image spreads further, and she slowly withdraws from church.", why:"Harm to a child is never too small to act on." }
+    ] },
+  reflection:"Which young people are in your life or your church? Write one conversation about AI you will have with them, and one way your church can better protect them."
+},
+/* ------------------------------------------------------------------ 6 */
+{ id:"z6", num:6, name:"Storehouse", theme:"Stewardship of people's information", building:"store",
+  keepsake:"Storehouse Key",
+  bigIdea:"Members trust the church with their names, prayer requests, struggles and giving. Pasting that information into AI tools can expose it. Faithful stewards guard what is entrusted to them.",
+  word:[
+    { ref:"1 Corinthians 4:2", text:"Moreover it is required in stewards, that a man be found faithful." },
+    { ref:"Proverbs 11:13", text:"A talebearer revealeth secrets: but he that is of a faithful spirit concealeth the matter." }
+  ],
+  concepts:[
+    { term:"Personal and sensitive information", def:"Names, phone numbers, addresses, giving records, health details, family problems, counselling notes and prayer requests.", ex:"A list of members who asked for prayer about their marriages is highly sensitive." },
+    { term:"Where your words go", def:"Many AI tools store what you type, and some use it to improve their systems unless you change the settings. Read the tool's privacy settings before you use it for church work.", ex:"A free chatbot account and a paid church account can handle your data very differently." },
+    { term:"The law applies to churches", def:"Many countries regulate personal data, including Jamaica (Data Protection Act, 2020) and the United Kingdom (UK GDPR). Churches are not exempt.", ex:"A church that keeps members' records should know who may see them and how long they are kept." },
+    { term:"The least-information rule", def:"Give an AI tool only what it needs. Remove names and details, or use made-up ones.", ex:"Ask for \u201Ca gentle letter to a member who has missed church for three months\u201D without pasting the member's name or story." },
+    { term:"Children and young people", def:"Take extra care with the names, photos and details of minors. Get a parent's consent before using images.", ex:"Sunday school photos stay off AI tools unless parents have agreed." }
+  ],
+  guard:["Pasting prayer lists, counselling notes or giving records into chatbots.","Using members' photos or voices in AI tools without permission.","Choosing tools without asking where the data goes."],
+  tracks:{ member:"Never paste another person's private details into an AI tool, and ask before posting anyone's photo.", leader:"Write down which AI tools are approved, what may never go into them, and who is responsible for church data." },
+  practise:{ type:"sort", prompt:"Keep it out, or fine with care?",
+    buckets:["Keep it out of AI tools","Fine with care"],
+    items:[
+      { t:"The full prayer-request list with names and situations.", b:0, why:"Personal and entrusted in confidence (Proverbs 11:13)." },
+      { t:"A draft announcement of the church picnic date and time.", b:1, why:"Public information." },
+      { t:"Notes from a counselling session, to get a summary.", b:0, why:"Deeply confidential. Never." },
+      { t:"Members' giving records, to make a chart.", b:0, why:"Financial data about named people. Use totals without names in your own spreadsheet." },
+      { t:"\u201CSuggest five themes for a youth retreat.\u201D", b:1, why:"No personal information at all." },
+      { t:"Sunday school photos, to make a promotional video.", b:0, why:"Children's images need their parents' consent, and care over where they are stored." }
+    ] },
+  decide:{ title:"The prayer list",
+    scenario:"The church secretary has 60 handwritten prayer requests. She wants to paste them into a free chatbot to sort them into categories for the prayer team.",
+    options:[
+      { t:"Paste them in. It saves hours.", s:0, result:"Names, illnesses and family troubles now sit on a company's servers, and the members never agreed to it.", why:"Stewards must be found faithful with what is entrusted (1 Corinthians 4:2)." },
+      { t:"Remove every name and identifying detail first, or sort them by hand with the prayer team.", s:2, result:"The team gets its categories, and no one's private struggle leaves the church.", why:"The least-information rule: the task gets done and confidence is kept." },
+      { t:"Ask the chatbot to promise it will keep them private.", s:0, result:"The chatbot says it will. That promise changes nothing about how the company stores data.", why:"A tool's words are not a privacy policy." }
+    ] },
+  reflection:"What private information does your church or ministry hold? Write one rule you would set to keep it out of AI tools."
+},
+/* ------------------------------------------------------------------ 7 */
+{ id:"z7", num:7, name:"Market Square", theme:"Honesty, justice and inclusion", building:"market",
+  keepsake:"Just Balance",
+  bigIdea:"The church should be the most honest place in town. Be open about AI use, refuse to deceive, and make sure AI does not leave behind the poor, the elderly or those without devices.",
+  word:[
+    { ref:"Proverbs 11:1", text:"A false balance is abomination to the LORD: but a just weight is his delight." },
+    { ref:"Micah 6:8", text:"What doth the LORD require of thee, but to do justly, and to love mercy, and to walk humbly with thy God?" }
+  ],
+  concepts:[
+    { term:"Disclosure", def:"Telling people when AI made or largely shaped what they see or hear: images, videos, articles, music.", ex:"A small line on a poster: \u201CImage created with AI.\u201D" },
+    { term:"No manipulation", def:"Never using AI to fake testimonies, crowds or urgency, or to pressure people to give.", ex:"Adding people to a service photo to make the church look bigger is a false balance." },
+    { term:"Bias", def:"AI can repeat unfair patterns from its training data, for example in who it pictures as a pastor or a leader.", ex:"Ask an image tool for \u201Ca pastor\u201D, then notice who it shows and who is missing." },
+    { term:"The digital divide", def:"Not every member has a smartphone, data or confidence with technology. Moving everything online can shut people out.", ex:"Keeping printed bulletins and phone trees for members who are not online." },
+    { term:"Truth with your neighbour", def:"\u201CPutting away lying, speak every man truth with his neighbour\u201D (Ephesians 4:25). That includes pictures, video and sound." }
+  ],
+  guard:["Fake or AI-enhanced testimonies, photos and crowds.","Hidden AI use in content people assume a person made.","Leaving behind members who are not online."],
+  tracks:{ member:"If you share AI-made images or writing, say so.", leader:"Adopt a simple disclosure line, and make sure every key announcement also reaches members who are offline." },
+  practise:{ type:"mcq", prompt:"Weigh it on a just balance.",
+    questions:[
+      { q:"The media team uses AI to add 200 people to a photo of Sunday service for the website. What does this break?", options:["Nothing. It is just marketing","Honesty: a false balance (Proverbs 11:1)","Only copyright law","The dress code"], a:1, why:"It deceives visitors about the church." },
+      { q:"What is the best disclosure for an AI-generated Easter poster image?", options:["Say nothing","A small line: \u201CImage created with AI\u201D","Credit the volunteer only","Remove the church's name"], a:1, why:"Short, plain and true." },
+      { q:"The church moves all announcements to an app. Who is most likely to be left out?", options:["Teenagers","Older members and those without smartphones or data","The pastor","Visitors with phones"], a:1, why:"Justice includes access. \u201CDo justly\u201D (Micah 6:8)." }
+    ] },
+  decide:{ title:"The anniversary testimonies",
+    scenario:"For the church anniversary, a volunteer proposes AI-generated testimony videos: realistic people describing how the church changed their lives. The stories are loosely based on real ones, but the faces and voices are invented.",
+    options:[
+      { t:"Go ahead. The stories are basically true.", s:0, result:"A visitor recognises the AI faces and asks what else at the church is fake.", why:"Putting away lying (Ephesians 4:25) includes lying with pictures." },
+      { t:"Invite real members to tell their own stories, on camera or in writing, with their consent.", s:2, result:"The video is less polished and far more powerful.", why:"Truth told by real witnesses." },
+      { t:"Use the AI videos but label them clearly as \u201Cdramatisations created with AI\u201D.", s:1, result:"It is honest, but the church misses the chance to let real members testify.", why:"Disclosure makes it honest. Real voices make it a testimony." }
+    ] },
+  reflection:"Where might your church be tempted to use AI to look bigger, busier or more polished than it is? Who in your congregation could be left behind as more moves online?"
+},
+/* ------------------------------------------------------------------ 8 */
+{ id:"z8", num:8, name:"Upper Room", theme:"Depending on God, not on AI", building:"upper",
+  keepsake:"Lamp of Prayer",
+  bigIdea:"The deepest danger is not that AI gets things wrong. It is that we start trusting it in God's place for answers, guidance and comfort. The church depends on God.",
+  word:[
+    { ref:"Psalm 20:7", text:"Some trust in chariots, and some in horses: but we will remember the name of the LORD our God." },
+    { ref:"Jeremiah 17:7", text:"Blessed is the man that trusteth in the LORD, and whose hope the LORD is." }
+  ],
+  concepts:[
+    { term:"Modern chariots", def:"Psalm 20:7 sets trust in chariots against remembering the name of the LORD. Any powerful tool can become a chariot we lean on.", ex:"A leader says, \u201CWe can't plan anything until the AI has looked at it.\u201D" },
+    { term:"Quiet idolatry", def:"Giving a created thing the trust or authority that belongs to God (Exodus 20:3). It usually happens slowly, through habit.", ex:"Asking AI for guidance on every decision before praying about it." },
+    { term:"Signs of dependence", def:"You feel unable to pray, plan or preach without it. You trust its answer over Scripture or counsel. You reach for it before you reach for God.", ex:"A youth leader who cannot lead devotions without an AI-written prayer." },
+    { term:"Disciplines that cannot be outsourced", def:"Prayer, Scripture reading, fasting, worship, Sabbath and fellowship form us. No one, and nothing, can do them for us.", ex:"AI can suggest a prayer. Only you can pray it." },
+    { term:"Rest", def:"Tools promise endless productivity. God commands rest (Exodus 20:8\u201310).", ex:"A ministry team that keeps one day a week free of screens." }
+  ],
+  guard:["Seeking guidance from AI before seeking God.","Handing prayer, devotion or worship to a machine.","Measuring a church's health by its technology."],
+  tracks:{ member:"Keep your devotions free of AI: your Bible, your prayers, your own words.", leader:"Let the church see its leaders pray before they decide, including about AI." },
+  practise:{ type:"sort", prompt:"Healthy use, or creeping dependence?",
+    buckets:["Healthy use","Creeping dependence"],
+    items:[
+      { t:"Looking up a hymn's history after singing it in devotions.", b:0, why:"Learning, inside a life of worship." },
+      { t:"Asking AI \u201CWhat does God want me to do about this job offer?\u201D and following its answer.", b:1, why:"Seeking guidance from a machine instead of God, Scripture and counsel." },
+      { t:"Feeling unable to pray in public without an AI-written prayer.", b:1, why:"The discipline has been handed over." },
+      { t:"Drafting a meeting agenda with AI, then praying over it with the team.", b:0, why:"A tool in its place, with God first." },
+      { t:"Checking an AI app before reading Scripture every morning.", b:1, why:"The order shows where trust is." },
+      { t:"Taking a weekly Sabbath from screens and tools.", b:0, why:"Rest is obedience." }
+    ] },
+  decide:{ title:"The building decision",
+    scenario:"The church must decide whether to buy land for a new building. A board member has had an AI tool analyse the options and says: \u201CThe AI says buy. Let's vote tonight.\u201D",
+    options:[
+      { t:"Vote tonight. The analysis is thorough.", s:0, result:"The vote passes in an hour. Many members later feel the church never prayed about it.", why:"\u201CExcept the LORD build the house, they labour in vain that build it\u201D (Psalm 127:1)." },
+      { t:"Treat the analysis as one input. Call the church to a season of prayer and fasting, and seek counsel before deciding.", s:2, result:"The decision takes six weeks, and the church moves forward united.", why:"\u201CIt seemed good to the Holy Ghost, and to us\u201D (Acts 15:28)." },
+      { t:"Throw out the analysis. Numbers have no place in spiritual decisions.", s:1, result:"The church prays but misses useful information about cost.", why:"Counting the cost is biblical too (Luke 14:28). The issue is where we put our trust, not whether we use information." }
+    ] },
+  reflection:"Where are you most tempted to rely on technology instead of God? Name one practice you will start, or return to, that keeps God first."
+},
+/* ------------------------------------------------------------------ 9 */
+{ id:"z9", num:9, name:"Council Table", theme:"Your church's AI covenant", building:"tent", capstone:true,
+  keepsake:"Covenant Seal",
+  bigIdea:"Bring the journey together. Draft a short covenant your leaders can discuss, pray over and adopt: what AI is for in your church, what it is never for, and who watches over it.",
+  word:[
+    { ref:"Acts 15:28", text:"For it seemed good to the Holy Ghost, and to us, to lay upon you no greater burden than these necessary things." },
+    { ref:"Proverbs 15:22", text:"Without counsel purposes are disappointed: but in the multitude of counsellors they are established." }
+  ],
+  uses:[
+    "Drafting announcements, letters and newsletters, checked by a person",
+    "Translation and captions so more people can take part",
+    "Background research for Bible study, checked against reliable sources",
+    "Reminders and rotas for care and volunteer teams",
+    "Simplifying materials for children and new believers",
+    "Agendas, minutes and other admin, checked by a person",
+    "Teaching young people to use AI wisely and honestly"
+  ],
+  never:[
+    "Writing sermons that are preached as the preacher's own",
+    "Replacing pastoral visits, counselling or crisis response",
+    "Handling prayer requests, counselling notes or giving records",
+    "Creating fake images, voices, testimonies or crowds",
+    "Making spiritual or major church decisions in place of prayer and counsel",
+    "Asking members for money by voice note or unconfirmed message",
+    "Using children's photos, names or voices without their parents' consent"
+  ],
+  always:[
+    "We will say when AI has largely shaped something we publish.",
+    "We will check every Bible reference AI gives us against Scripture itself.",
+    "We will keep members' private information out of AI tools.",
+    "We will make sure members without technology are never left out."
+  ]
+}
+];
+
+ZONES.forEach((z, i) => z.num = i + 1);
+const COUNT = ZONES.length;
+const COUNT_WORD = ["zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve"][COUNT] || String(COUNT);
+
+/* ======================= state ======================= */
+const STORE = "kingdom-crossroads-v1";
+const PREVIEW = location.hash === "#preview";
+function blank(){ return { name:"", track:"", stamps:{}, acts:{}, choices:{}, refl:{}, cov:{ church:"", vision:"", uses:[], never:[], useX:"", neverX:"", over:"", review:"every year", help:"" } }; }
+function load(){ try{ const r = localStorage.getItem(STORE); if(r){ const d = JSON.parse(r); const b = blank(); return Object.assign(b, d, { cov:Object.assign(b.cov, d.cov||{}) }); } }catch(e){} return blank(); }
+let S = load();
+function save(){ try{ localStorage.setItem(STORE, JSON.stringify(S)); }catch(e){} }
+const T = {}; // in-memory activity state
+const app = document.getElementById("app");
+let view = "home";
+
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" })[c]);
+const byId = id => ZONES.find(z => z.id === id);
+const words = s => (s || "").trim().split(/\s+/).filter(Boolean).length;
+const stampCount = () => ZONES.filter(z => S.stamps[z.id]).length;
+const unlocked = i => PREVIEW || i === 0 || !!S.stamps[ZONES[i-1].id];
+const status = i => S.stamps[ZONES[i].id] ? "dn" : unlocked(i) ? "cur" : "lk";
+const statusWord = { dn:"Stamped", cur:"Open", lk:"Locked" };
+const MIN_WORDS = 20;
+const maxScore = ZONES.filter(z => z.decide).length * 2;
+function score(){ let s = 0; ZONES.forEach(z => { if(z.decide && S.choices[z.id] != null) s += z.decide.options[S.choices[z.id]].s; }); return s; }
+const VERDICT = { 2:"Wise path", 1:"Partly wise", 0:"Harmful path" };
+
+function shuffle(n, seed){ const a = [...Array(n).keys()]; let x = seed * 9301 + 49297; for(let i = n - 1; i > 0; i--){ x = (x * 9301 + 49297) % 233280; const j = Math.floor(x / 233280 * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+
+/* ======================= map ======================= */
+function rng(seed){ return () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+function building(kind, x, y){
+  const r = n => Math.round(n);
+  switch(kind){
+    case "gate": return `<rect class="m-stone" x="${x-44}" y="${y-62}" width="18" height="62"/><rect class="m-stone" x="${x+26}" y="${y-62}" width="18" height="62"/><path class="m-arch" d="M${x-35} ${y-62} Q${x} ${y-108} ${x+35} ${y-62}"/>`;
+    case "well": return `<rect class="m-stone" x="${x-28}" y="${y-28}" width="56" height="28" rx="6"/><line x1="${x-22}" y1="${y-28}" x2="${x-22}" y2="${y-66}" stroke="var(--m-trunk)" stroke-width="5"/><line x1="${x+22}" y1="${y-28}" x2="${x+22}" y2="${y-66}" stroke="var(--m-trunk)" stroke-width="5"/><polygon class="m-roof" points="${x-34},${y-62} ${x},${y-86} ${x+34},${y-62}"/>`;
+    case "tower": return `<rect class="m-wall" x="${x-16}" y="${y-104}" width="32" height="104"/><polygon class="m-roof2" points="${x-24},${y-104} ${x},${y-134} ${x+24},${y-104}"/><rect class="m-win" x="${x-6}" y="${y-90}" width="12" height="16" rx="3"/>`;
+    case "house": return `<rect class="m-wall" x="${x-34}" y="${y-44}" width="68" height="44"/><polygon class="m-roof" points="${x-42},${y-44} ${x},${y-78} ${x+42},${y-44}"/><rect class="m-win" x="${x-22}" y="${y-32}" width="12" height="12"/><rect class="m-win" x="${x+10}" y="${y-32}" width="12" height="12"/>`;
+    case "fold": return `<ellipse cx="${x}" cy="${y-18}" rx="62" ry="26" class="m-fence"/>` + [[-26,-20],[-6,-14],[16,-22],[30,-12],[-36,-10]].map(([a,b]) => `<ellipse class="m-sheep" cx="${x+a}" cy="${y+b}" rx="9" ry="7"/>`).join("");
+    case "store": return `<rect class="m-wall" x="${x-46}" y="${y-42}" width="92" height="42"/><polygon class="m-roof2" points="${x-54},${y-42} ${x},${y-74} ${x+54},${y-42}"/><rect class="m-stone" x="${x-10}" y="${y-26}" width="20" height="26"/>`;
+    case "market": return [-36,0,36].map((d,i) => `<rect class="m-wall" x="${x+d-16}" y="${y-30}" width="32" height="30"/><polygon class="${i%2?'m-roof2':'m-roof'}" points="${x+d-20},${y-30} ${x+d},${y-50} ${x+d+20},${y-30}"/>`).join("");
+    case "upper": return `<rect class="m-wall" x="${x-30}" y="${y-88}" width="60" height="88"/><polygon class="m-roof" points="${x-38},${y-88} ${x},${y-118} ${x+38},${y-88}"/><rect class="m-win" x="${x-18}" y="${y-74}" width="12" height="14"/><rect class="m-win" x="${x+6}" y="${y-74}" width="12" height="14"/><rect class="m-stone" x="${x-9}" y="${y-28}" width="18" height="28"/>`;
+    case "bridge": return `<path class="m-stone" d="M${x-60},${y} L${x-60},${y-22} L${x+60},${y-22} L${x+60},${y} L${x+34},${y} Q${x},${y-30} ${x-34},${y} Z"/>`;
+    case "tent": return `<polygon class="m-tent" points="${x-56},${y} ${x},${y-74} ${x+56},${y}"/><polygon class="m-roof" points="${x-10},${y} ${x},${y-74} ${x+10},${y}"/><line x1="${x}" y1="${y-74}" x2="${x}" y2="${y-96}" stroke="var(--m-line)" stroke-width="3"/><polygon class="m-roof2" points="${x},${y-96} ${x+22},${y-90} ${x},${y-84}"/>`;
+  }
+  return "";
+}
+function mapSVG(){
+  const W = 1600, H = 1000;
+  const P = ZONES.map(z => [MAP_PINS[z.id][0] * W / 100, MAP_PINS[z.id][1] * H / 100]);
+  const f = n => Math.round(n);
+  let d = `M${f(P[0][0] - 120)},${f(P[0][1] + 150)} L${f(P[0][0])},${f(P[0][1])}`;
+  for(let i = 0; i < P.length - 1; i++){
+    const p0 = P[i-1] || P[i], p1 = P[i], p2 = P[i+1], p3 = P[i+2] || p2;
+    d += ` C${f(p1[0] + (p2[0]-p0[0])/6)},${f(p1[1] + (p2[1]-p0[1])/6)} ${f(p2[0] - (p3[0]-p1[0])/6)},${f(p2[1] - (p3[1]-p1[1])/6)} ${f(p2[0])},${f(p2[1])}`;
+  }
+  const rnd = rng(7); let trees = "";
+  for(let k = 0; k < 90 && trees.length < 9000; k++){
+    const x = 160 + rnd() * 1300, y = 140 + rnd() * 760;
+    if(P.some(p => Math.hypot(p[0]-x, p[1]-y) < 110)) continue;
+    if(Math.hypot((x-700)/150, (y-770)/80) < 1.1) continue;
+    trees += `<rect class="m-trunk" x="${f(x-3)}" y="${f(y)}" width="6" height="14"/><circle class="m-tree" cx="${f(x)}" cy="${f(y-4)}" r="${f(13 + rnd()*6)}"/>`;
+  }
+  const waves = [[120,80],[1460,70],[60,940],[1500,940],[780,970],[1540,600],[40,300]].map(([x,y]) => `<path class="m-wave wave" d="M${x-30},${y} q15,-10 30,0 t30,0"/>`).join("");
+  const blds = ZONES.map((z,i) => building(z.building, f(P[i][0]), f(P[i][1] - 22))).join("");
+  return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Placeholder map: a hill village with ${COUNT_WORD} zones linked by one road, from the Vision Gate to the Council Table">
+    <rect class="m-sea" width="${W}" height="${H}"/>${waves}
+    <path class="m-shore" d="M120,520 C80,330 210,150 420,110 C640,60 820,120 1000,90 C1220,55 1450,110 1530,260 C1600,400 1540,560 1500,700 C1450,880 1250,930 1020,920 C800,910 640,960 420,935 C230,915 60,820 120,520Z"/>
+    <path class="m-land" d="M120,520 C80,330 210,150 420,110 C640,60 820,120 1000,90 C1220,55 1450,110 1530,260 C1600,400 1540,560 1500,700 C1450,880 1250,930 1020,920 C800,910 640,960 420,935 C230,915 60,820 120,520Z"/>
+    <ellipse class="m-hill" cx="360" cy="270" rx="230" ry="110"/><ellipse class="m-hill2" cx="1120" cy="220" rx="280" ry="100"/><ellipse class="m-hill" cx="1380" cy="420" rx="150" ry="80"/><ellipse class="m-hill2" cx="1050" cy="190" rx="140" ry="50"/>
+    <ellipse class="m-lake" cx="700" cy="770" rx="130" ry="62"/>
+    <text class="m-label" x="700" y="776" text-anchor="middle">STILL WATERS</text>
+    <path class="m-road-edge" d="${d}"/><path class="m-road" d="${d}"/><path class="m-road-dash" d="${d}"/>
+    ${trees}${blds}
+  </svg>`;
+}
+function mapHTML(){
+  const pins = ZONES.map((z,i) => { const st = status(i); const [x,y] = MAP_PINS[z.id];
+    return `<button type="button" class="pin ${st}" style="left:${x}%;top:${y}%" data-go="${z.id}" aria-label="Zone ${z.num}: ${esc(z.name)}, ${statusWord[st]}"><span class="dot">${S.stamps[z.id] ? "\u2713" : z.num}</span><span class="nm">${esc(z.name)}</span></button>`; }).join("");
+  const img = `<img src="${esc(MAP_IMAGES[0])}" data-i="0" hidden alt="Painted map of the Kingdom Crossroads village: a stone path winds past a pergola, ruined arches, a bridge and waterfall, sheep, village houses and a rock tomb up to a cross on the hill, under a glowing circuit-brain sky" onload="mapLoaded(this)" onerror="nextMap(this)">`;
+  return `<div class="mapbox" style="--map-ratio:${MAP_RATIO}">${mapSVG()}${img}${pins}</div>`;
+}
+
+/* ======================= views ======================= */
+function setMeter(){ const n = stampCount(); document.getElementById("meterTxt").textContent = `${n} of ${COUNT} stamps`; document.getElementById("meterFill").style.width = (n / COUNT * 100) + "%"; }
+
+function welcomeHTML(){
+  if(S.track) return `<div class="who"><span>Travelling as <b>${esc(S.name || "a pilgrim")}</b> on the <b>${S.track === "leader" ? "church leader" : "church member"}</b> track.</span><button type="button" class="linkbtn" data-act="retrack">Change</button></div>`;
+  return `<div class="welcome">
+    <div class="field"><label for="nm">Your name, for your passport and certificate</label><input id="nm" autocomplete="name" placeholder="e.g. Sister Joy Campbell" value="${esc(S.name)}"></div>
+    <span style="font-weight:700">Choose your track</span>
+    <div class="tracks">
+      <button type="button" class="trackbtn" data-track="member"><b>I am a church member</b><small>Guidance for your own faith, family and ministry.</small></button>
+      <button type="button" class="trackbtn" data-track="leader"><b>I am a church leader</b><small>Pastors, elders, deacons, ministry heads and administrators.</small></button>
+    </div></div>`;
+}
+
+function home(){
+  const n = stampCount();
+  app.innerHTML = `
+  <section class="band"><div class="wrap band-in">
+    <div class="hero">
+      <span class="kicker">A journey for church members and leaders</span>
+      <h1>Kingdom <em>Crossroads</em></h1>
+      <p class="lede">Walk through ${COUNT_WORD} zones of a village on a hill. In each one you meet one idea about artificial intelligence, open the Scriptures that speak to it, and make the kind of decisions churches now face. You finish by drafting your church's own AI covenant.</p>
+      <ol class="steps5"><li><b>Learn</b>One clear idea</li><li><b>Read the Word</b>Scripture first</li><li><b>Practise</b>Sort and check</li><li><b>Decide</b>Choose a path</li><li><b>Reflect</b>Earn the stamp</li></ol>
+      ${welcomeHTML()}
+    </div>
+    ${mapHTML()}
+    <p class="maphint">Tap the glowing zone to enter. Each zone opens when you finish the one before.</p>
+  </div></section>
+  <section class="wrap">
+    <div class="section-h"><div><span class="kicker dark">The road</span><h2>${COUNT_WORD[0].toUpperCase() + COUNT_WORD.slice(1)} zones, one covenant</h2></div><span class="count">${n} of ${COUNT} stamps</span></div>
+    <ol class="rt">${ZONES.map((z,i) => { const st = status(i); return `<li><button type="button" class="${st}" data-go="${z.id}"><span class="top"><span class="num">${z.num}</span><span class="st">${statusWord[st]}</span></span><b>${esc(z.name)}</b><small>${esc(z.theme)}</small></button></li>`; }).join("")}</ol>
+  </section>`;
+}
+
+function wordHTML(z){ return `<div class="word">${z.word.map(v => `<figure class="verse" style="margin:0"><p>\u201C${esc(v.text)}\u201D</p><cite>${esc(v.ref)} (KJV)</cite>${PLAIN[v.ref] ? `<p class="plain"><b>In plain words:</b> ${esc(PLAIN[v.ref])}</p>` : ""}</figure>`).join("")}</div>`; }
+function helpHTML(){
+  const list = HELP_CONTACTS.length
+    ? `<ul>${HELP_CONTACTS.map(h => `<li><b>${esc(h.name)}</b>: <span class="sel">${esc(h.contact)}</span>${h.note ? ` (${esc(h.note)})` : ""}</li>`).join("")}</ul>`
+    : `<p>Your church has not added its crisis contacts here yet. Ask your pastor who to call. Leaders can list them in the covenant at the Council Table.</p>`;
+  const own = S.cov.help.trim() ? `<p><b>From your church's covenant draft:</b></p><p style="white-space:pre-wrap">${esc(S.cov.help)}</p>` : "";
+  return `<div class="help" role="note"><h3>Where to get help</h3><p><b>If someone is in immediate danger, call your local emergency number now.</b></p>${list}${own}</div>`;
+}
+
+function zoneHead(z){
+  return `<div class="zhead">
+    <button type="button" class="back" data-go="home">\u2190 Back to the map</button>
+    <span class="kicker dark">Zone ${z.num} \u00B7 ${esc(z.theme)}</span>
+    <h1>${esc(z.name)}</h1>
+    <p class="big">${esc(z.bigIdea)}</p>
+    <span class="keep">Keepsake for this zone: <b>${esc(z.keepsake)}</b></span>
+    ${wordHTML(z)}
+  </div>`;
+}
+
+function zone(id){
+  const z = byId(id), i = ZONES.indexOf(z);
+  if(!unlocked(i)){ toast(`Finish Zone ${i} first to open ${z.name}.`); return go("home"); }
+  if(z.capstone) return council(z);
+  const track = S.track || "member";
+  app.innerHTML = `<div class="wrap">
+    ${zoneHead(z)}
+    <section class="block"><header><span class="step">1</span><h2>Learn</h2><span class="sub">Read each idea and its church example.</span></header>
+      <div class="cards">${z.concepts.map(c => `<article class="card"><span class="term">${esc(c.term)}</span><p class="def">${esc(c.def)}</p>${c.ex ? `<p class="ex">${esc(c.ex)}</p>` : ""}</article>`).join("")}</div>
+      <div class="guard">
+        <div class="against"><h3>Guard against</h3><ul>${z.guard.map(g => `<li>${esc(g)}</li>`).join("")}</ul></div>
+        <div class="yours"><span class="tag">${track === "leader" ? "For church leaders" : "For church members"}</span><h3>Your next step</h3><p>${esc(z.tracks[track])}</p><span class="tag" style="margin-top:6px">${track === "leader" ? "For members" : "For leaders"}</span><p style="color:var(--muted); font-size:.95rem">${esc(z.tracks[track === "leader" ? "member" : "leader"])}</p></div>
+      </div>
+      ${z.help ? helpHTML() : ""}
+    </section>
+    <section class="block"><header><span class="step">2</span><h2>Practise</h2></header><div id="act-${z.id}"></div></section>
+    <section class="block"><header><span class="step">3</span><h2>Decide</h2><span class="sub">Choose what you would do. Your first choice counts toward your discernment score, and every path explains itself.</span></header><div id="dec-${z.id}"></div></section>
+    <section class="block"><header><span class="step">4</span><h2>Reflect</h2><span class="sub">Write at least ${MIN_WORDS} words. Your reflections are collected in your passport.</span></header>
+      <label for="refl" style="font-weight:700">${esc(z.reflection)}</label>
+      <textarea id="refl" data-zone="${z.id}">${esc(S.refl[z.id] || "")}</textarea>
+      <span class="wc" id="wc"></span>
+    </section>
+    <div class="gate" id="gate"></div>
+  </div>`;
+  renderAct(z); renderDecide(z); updateWC(z); renderGate(z);
+}
+
+/* ---- practise ---- */
+function renderAct(z){
+  const el = document.getElementById("act-" + z.id); if(!el) return;
+  const a = z.practise, done = !!S.acts[z.id];
+  if(a.type === "sort"){
+    const t = T[z.id] || (T[z.id] = { placed: done ? Object.fromEntries(a.items.map((_,k) => [k, true])) : {}, sel:null, msg:"", order: shuffle(a.items.length, z.num) });
+    const left = t.order.filter(k => !t.placed[k]);
+    el.innerHTML = `<div class="act ${done ? "passed" : ""}">
+      <p class="ap">${esc(a.prompt)} <span style="font-weight:400; color:var(--muted)">Tap a card, then tap the basket where it belongs.</span></p>
+      <p class="status">${done ? "Complete. Well discerned." : `${Object.keys(t.placed).length} of ${a.items.length} placed`}</p>
+      ${left.length ? `<div class="tray">${left.map(k => `<button type="button" class="item ${t.sel === k ? "sel" : ""}" data-sort-item="${k}" aria-pressed="${t.sel === k}">${esc(a.items[k].t)}</button>`).join("")}</div>` : ""}
+      <div class="buckets">${a.buckets.map((b,bi) => `<div class="bucket ${t.sel != null ? "ready" : ""}" role="button" tabindex="0" data-sort-bucket="${bi}" aria-label="Place in: ${esc(b)}"><b>${esc(b)}</b>${a.items.map((it,k) => t.placed[k] && it.b === bi ? `<div class="placed">${esc(it.t)}<small>${esc(it.why)}</small></div>` : "").join("")}</div>`).join("")}</div>
+      ${t.msg}
+    </div>`;
+  } else {
+    const t = T[z.id] || (T[z.id] = { wrong:{}, right: done ? Object.fromEntries(a.questions.map((_,k) => [k, true])) : {} });
+    el.innerHTML = `<div class="act ${done ? "passed" : ""}">
+      <p class="ap">${esc(a.prompt)}</p>
+      <p class="status">${done ? "Complete. Every answer found." : `${Object.keys(t.right).length} of ${a.questions.length} answered`}</p>
+      ${a.questions.map((q,qi) => { const r = t.right[qi], w = t.wrong[qi] || []; return `<div class="q"><p><b>${qi + 1}. ${esc(q.q)}</b></p><div class="opts">${q.options.map((o,oi) => `<button type="button" class="opt ${r && oi === q.a ? "right" : ""} ${w.includes(oi) ? "wrong" : ""}" data-mcq="${qi}" data-opt="${oi}" ${r || w.includes(oi) ? "disabled" : ""}>${esc(o)}</button>`).join("")}</div>${r ? `<p class="msg ok">${esc(q.why)}</p>` : w.length ? `<p class="msg no">Not quite. Try another answer.</p>` : ""}</div>`; }).join("")}
+    </div>`;
+  }
+}
+
+/* ---- decide ---- */
+function renderDecide(z){
+  const el = document.getElementById("dec-" + z.id); if(!el) return;
+  const d = z.decide, ch = S.choices[z.id], showAll = T["all-" + z.id];
+  el.innerHTML = `<div class="act ${ch != null ? "passed" : ""}">
+    <div class="scene"><span class="tag">Scenario</span><h3>${esc(d.title)}</h3><p>${esc(d.scenario)}</p></div>
+    <div class="paths">${d.options.map((o,oi) => { const chosen = ch === oi, reveal = chosen || (ch != null && showAll);
+      return `<button type="button" class="path ${chosen ? "chosen s" + o.s : ""} ${ch != null && !chosen ? "faded" : ""}" data-decide="${oi}" ${ch != null ? "disabled" : ""}>
+        <span class="lead"><i>${"ABC"[oi]}</i><span>${esc(o.t)}</span></span>
+        ${reveal ? `<span class="out"><span class="verdict v${o.s}">${chosen ? "Your choice \u00B7 " : ""}${VERDICT[o.s]}</span><span>${esc(o.result)}</span><em>${esc(o.why)}</em></span>` : ""}
+      </button>`; }).join("")}</div>
+    ${ch != null && !showAll ? `<button type="button" class="btn ghost" data-act="showpaths">Show where the other paths lead</button>` : ""}
+  </div>`;
+}
+
+/* ---- reflection + gate ---- */
+function updateWC(z){ const n = words(S.refl[z.id]); const el = document.getElementById("wc"); if(el){ el.textContent = n >= MIN_WORDS ? `${n} words. Ready.` : `${n} of ${MIN_WORDS} words`; el.className = "wc" + (n >= MIN_WORDS ? " ok" : ""); } }
+function reqs(z){
+  if(z.capstone){ const c = S.cov; return [
+    ["Church name", !!c.church.trim()], ["Your church's vision", words(c.vision) >= 5],
+    ["At least 3 ways AI may be used", c.uses.length + (c.useX.trim() ? 1 : 0) >= 3],
+    ["At least 3 things AI is never used for", c.never.length + (c.neverX.trim() ? 1 : 0) >= 3],
+    ["Who oversees the covenant", !!c.over.trim()] ]; }
+  return [["Practise activity complete", !!S.acts[z.id]], ["Decision made", S.choices[z.id] != null], [`Reflection of at least ${MIN_WORDS} words`, words(S.refl[z.id]) >= MIN_WORDS]];
+}
+function renderGate(z){
+  const el = document.getElementById("gate"); if(!el) return;
+  const r = reqs(z), ok = r.every(x => x[1]), got = S.stamps[z.id];
+  el.innerHTML = got
+    ? `<h2>Stamped: ${esc(z.keepsake)}</h2><p>You completed this zone on ${esc(got)}.</p><div class="row">${nextBtn(z)}<button type="button" class="btn ghost" data-go="passport">Open my passport</button></div>`
+    : `<h2>Receive your ${esc(z.keepsake)}</h2><ul>${r.map(([t,v]) => `<li class="${v ? "ok" : ""}">${esc(t)}</li>`).join("")}</ul><button type="button" class="btn big" data-act="stamp" ${ok ? "" : "disabled"}>${z.capstone ? "Seal the covenant" : "Receive your stamp"}</button>`;
+}
+function nextBtn(z){ const i = ZONES.indexOf(z); return i < ZONES.length - 1 ? `<button type="button" class="btn" data-go="${ZONES[i+1].id}">Go on to ${esc(ZONES[i+1].name)} \u2192</button>` : `<button type="button" class="btn" data-go="passport">See your certificate \u2192</button>`; }
+
+/* ---- council table ---- */
+function covenantHTML(){
+  const c = S.cov, z = byId("z9");
+  const uses = [...c.uses.map(i => z.uses[i]), ...(c.useX.trim() ? c.useX.split("\n").filter(s => s.trim()) : [])];
+  const never = [...c.never.map(i => z.never[i]), ...(c.neverX.trim() ? c.neverX.split("\n").filter(s => s.trim()) : [])];
+  const li = a => a.length ? `<ul>${a.map(s => `<li>${esc(s)}</li>`).join("")}</ul>` : `<p style="color:var(--muted)">Not chosen yet.</p>`;
+  return `<h3>${esc(c.church || "Our church")} AI Covenant</h3>
+    <p class="meta">Draft for prayer and discussion \u00B7 ${new Date().toLocaleDateString(undefined, { day:"numeric", month:"long", year:"numeric" })}</p>
+    <h4>Our vision</h4><p>${esc(c.vision || "Write your church's vision above.")}</p>
+    <p>We believe AI is a tool. We depend on God, His Word and one another, not on technology.</p>
+    <h4>We may use AI for</h4>${li(uses)}
+    <h4>We will never use AI for</h4>${li(never)}
+    <h4>We also commit to</h4><ul>${z.always.map(s => `<li>${esc(s)}</li>`).join("")}</ul>
+    ${c.help.trim() ? `<h4>Care in a crisis</h4><p>A person, never a chatbot, responds to any member in crisis. Our members can reach help here:</p><p style="white-space:pre-wrap">${esc(c.help)}</p>` : ""}
+    <h4>Oversight</h4><p>${esc(c.over || "[name or team]")} will oversee this covenant and report to the leadership. We will review it ${esc(c.review)}.</p>
+    <blockquote>\u201CIt seemed good to the Holy Ghost, and to us.\u201D Acts 15:28</blockquote>`;
+}
+function covenantText(){
+  const c = S.cov, z = byId("z9");
+  const uses = [...c.uses.map(i => z.uses[i]), ...c.useX.split("\n").filter(s => s.trim())];
+  const never = [...c.never.map(i => z.never[i]), ...c.neverX.split("\n").filter(s => s.trim())];
+  return [`${c.church || "Our church"} AI Covenant`, "Draft for prayer and discussion", "", "OUR VISION", c.vision, "",
+    "We believe AI is a tool. We depend on God, His Word and one another, not on technology.", "",
+    "WE MAY USE AI FOR", ...uses.map(s => "\u2022 " + s), "", "WE WILL NEVER USE AI FOR", ...never.map(s => "\u2022 " + s), "",
+    "WE ALSO COMMIT TO", ...z.always.map(s => "\u2022 " + s), "",
+    ...(c.help.trim() ? ["CARE IN A CRISIS", "A person, never a chatbot, responds to any member in crisis. Our members can reach help here:", c.help, ""] : []),
+    "OVERSIGHT",
+    `${c.over} will oversee this covenant and report to the leadership. We will review it ${c.review}.`, "",
+    "\u201CIt seemed good to the Holy Ghost, and to us.\u201D Acts 15:28"].join("\n");
+}
+function council(z){
+  const c = S.cov;
+  app.innerHTML = `<div class="wrap">
+    ${zoneHead(z)}
+    <section class="block"><header><span class="step">1</span><h2>Draft your covenant</h2><span class="sub">Draw on the decisions you made along the road. Leaders can draft it for the church; members can draft one to bring to their leaders.</span></header>
+      <form class="bp" id="covform" onsubmit="return false">
+        <fieldset><legend>Who we are</legend>
+          <div class="field"><label for="cov-church">Church name</label><input id="cov-church" data-cov="church" value="${esc(c.church)}" placeholder="e.g. Mount Zion Baptist Church"></div>
+          <div class="field"><label for="cov-vision">Our vision</label><span class="hint">Use your church's vision statement, or the one you wrote at the Vision Gate.</span><textarea id="cov-vision" data-cov="vision">${esc(c.vision || S.refl.z1 || "")}</textarea></div>
+        </fieldset>
+        <fieldset><legend>We may use AI for</legend>
+          <div class="checks">${z.uses.map((u,i) => `<label><input type="checkbox" id="cov-use-${i}" data-covlist="uses" value="${i}" ${c.uses.includes(i) ? "checked" : ""}> ${esc(u)}</label>`).join("")}</div>
+          <div class="field"><label for="cov-useX">Add your own (one per line)</label><textarea id="cov-useX" data-cov="useX">${esc(c.useX)}</textarea></div>
+        </fieldset>
+        <fieldset><legend>We will never use AI for</legend>
+          <div class="checks">${z.never.map((u,i) => `<label><input type="checkbox" id="cov-never-${i}" data-covlist="never" value="${i}" ${c.never.includes(i) ? "checked" : ""}> ${esc(u)}</label>`).join("")}</div>
+          <div class="field"><label for="cov-neverX">Add your own (one per line)</label><textarea id="cov-neverX" data-cov="neverX">${esc(c.neverX)}</textarea></div>
+        </fieldset>
+        <fieldset><legend>Care in a crisis</legend>
+          <div class="field"><label for="cov-help">Who members can call in a crisis</label><span class="hint">Names and numbers of your pastoral care contact, safeguarding lead and local crisis lines. These also appear at the Shepherd's Fold. Optional, but strongly recommended.</span><textarea id="cov-help" data-cov="help">${esc(c.help)}</textarea></div>
+        </fieldset>
+        <fieldset><legend>Oversight</legend>
+          <div class="field"><label for="cov-over">Who will watch over this covenant?</label><input id="cov-over" data-cov="over" value="${esc(c.over)}" placeholder="e.g. The pastor and the deacon board"></div>
+          <div class="field"><label for="cov-review">How often will you review it?</label><select id="cov-review" data-cov="review">${["every six months","every year","every two years"].map(o => `<option ${c.review === o ? "selected" : ""}>${o}</option>`).join("")}</select></div>
+        </fieldset>
+      </form>
+    </section>
+    <section class="block"><header><span class="step">2</span><h2>Read it back</h2><span class="sub">This updates as you write. Copy it into a document for your leaders.</span></header>
+      <div class="covenant" id="covout">${covenantHTML()}</div>
+      <div class="row"><button type="button" class="btn" data-act="copycov">Copy the covenant</button><span id="copymsg" class="wc"></span></div>
+      <textarea id="covcopy" readonly hidden></textarea>
+    </section>
+    <div class="gate" id="gate"></div>
+  </div>`;
+  if(!c.vision && S.refl.z1){ S.cov.vision = S.refl.z1; save(); document.getElementById("covout").innerHTML = covenantHTML(); }
+  renderGate(z);
+}
+
+/* ---- passport ---- */
+function passport(){
+  const n = stampCount(), sc = score(), decided = ZONES.filter(z => z.decide && S.choices[z.id] != null).length;
+  const pct = maxScore ? Math.round(sc / maxScore * 100) : 0;
+  const all = n === ZONES.length;
+  const code = "KC-" + (S.stamps.z9 || "").replace(/\D/g, "").slice(-6) + "-" + String(sc).padStart(2, "0");
+  const refl = ZONES.filter(z => S.refl[z.id] && S.refl[z.id].trim());
+  app.innerHTML = `<div class="wrap">
+    <div class="zhead"><button type="button" class="back" data-go="home">\u2190 Back to the map</button><span class="kicker dark">My passport</span><h1>${esc(S.name || "Pilgrim")}'s journey</h1><p class="big">${n} of ${COUNT} stamps \u00B7 ${S.track === "leader" ? "Church leader track" : "Church member track"}</p></div>
+    ${all ? `<section class="block"><div class="cert"><span class="kicker dark">Certificate of completion</span><h2>Discerning Steward</h2><p>This certifies that</p><p class="nm">${esc(S.name || "Pilgrim")}</p><p>has completed <b>Kingdom Crossroads: AI and the Church</b>, travelling all ${COUNT_WORD} zones on the ${S.track === "leader" ? "church leader" : "church member"} track and drafting an AI covenant for ${esc(S.cov.church || "their church")}.</p><p>Completed ${esc(S.stamps.z9)} \u00B7 Discernment ${sc} of ${maxScore}</p><code>${esc(code)}</code><p style="font-size:.85rem; color:var(--muted)">Dr. Rohan Jowallah, Ed.D., FHEA</p></div></section>` : ""}
+    <section class="block"><header><h2>Stamps</h2></header>
+      <div class="stamps">${ZONES.map(z => `<div class="stamp ${S.stamps[z.id] ? "got" : ""}"><span><b>${esc(z.keepsake)}</b>${esc(z.name)}${S.stamps[z.id] ? "<br>" + esc(S.stamps[z.id]) : ""}</span></div>`).join("")}</div>
+    </section>
+    <section class="block"><header><h2>Discernment compass</h2><span class="sub">Your first choice in each scenario. A wise path scores 2, a partly wise path 1.</span></header>
+      <div class="compass"><div class="row" style="justify-content:space-between"><b>${sc} of ${maxScore} points</b><span class="wc">${decided} of ${maxScore / 2} decisions made</span></div><div class="bar2"><div style="width:${pct}%"></div></div>
+      <ul class="dlist">${ZONES.filter(z => z.decide).map(z => { const ch = S.choices[z.id]; return `<li><span>${esc(z.decide.title)}</span>${ch != null ? `<span class="verdict v${z.decide.options[ch].s}">${VERDICT[z.decide.options[ch].s]}</span>` : `<span class="wc">Not yet</span>`}</li>`; }).join("")}</ul></div>
+    </section>
+    <section class="block"><header><h2>My reflections</h2></header>
+      ${refl.length ? `<div class="refl">${refl.map(z => `<article><span class="kicker dark">${esc(z.name)}</span><p>${esc(S.refl[z.id])}</p></article>`).join("")}</div><div class="row"><button type="button" class="btn" data-act="copyrefl">Copy all reflections</button><span id="copymsg" class="wc"></span></div><textarea id="covcopy" readonly hidden></textarea>` : `<p style="color:var(--muted)">Your reflections will appear here as you complete each zone.</p>`}
+    </section>
+    <section class="block"><header><h2>Start again</h2><span class="sub">Clears every stamp, answer and reflection saved in this browser.</span></header>
+      <div class="row" id="resetrow"><button type="button" class="btn ghost" data-act="reset1">Clear my progress</button></div>
+    </section>
+  </div>`;
+}
+
+/* ======================= routing + events ======================= */
+function go(v){
+  view = v;
+  if(v === "home") home(); else if(v === "passport") passport(); else zone(v);
+  setMeter(); window.scrollTo(0, 0);
+}
+function toast(msg){ const t = document.createElement("div"); t.className = "toast"; t.setAttribute("role", "status"); t.textContent = msg; document.body.appendChild(t); setTimeout(() => t.remove(), 2600); }
+function copy(text){
+  const msg = document.getElementById("copymsg"), box = document.getElementById("covcopy");
+  const fallback = () => { if(box){ box.hidden = false; box.value = text; box.style.minHeight = "200px"; box.select(); } if(msg) msg.textContent = "Select the text below and copy it."; };
+  try{ navigator.clipboard.writeText(text).then(() => { if(msg) msg.textContent = "Copied."; }, fallback); }catch(e){ fallback(); }
+}
+function stampOverlay(z){
+  const o = document.createElement("div"); o.className = "overlay"; o.setAttribute("role", "dialog"); o.setAttribute("aria-label", "Stamp received");
+  const i = ZONES.indexOf(z), next = ZONES[i+1];
+  o.innerHTML = `<div class="panel"><div class="bigstamp">${esc(z.keepsake)}</div><h2 style="font-family:var(--f-display); font-weight:400; font-size:1.6rem">${esc(z.name)} complete</h2><p>${next ? `${esc(next.name)} is now open.` : "You have finished the journey. Your certificate is in your passport."}</p><div class="row" style="justify-content:center"><button type="button" class="btn" data-close="${next ? next.id : "passport"}">${next ? "Go on to " + esc(next.name) : "See my certificate"}</button><button type="button" class="btn ghost" data-close="home">Back to the map</button></div></div>`;
+  document.body.appendChild(o);
+  o.querySelector("button").focus();
+  o.addEventListener("click", e => { const b = e.target.closest("[data-close]"); if(b){ o.remove(); go(b.dataset.close); } });
+}
+
+document.addEventListener("click", e => {
+  const g = e.target.closest("[data-go]");
+  if(g){ const v = g.dataset.go; if(v !== "home" && v !== "passport"){ const i = ZONES.findIndex(z => z.id === v); if(!unlocked(i)){ toast(`Finish Zone ${i} first to open ${ZONES[i].name}.`); return; } } go(v); return; }
+  const z = byId(view);
+  const tb = e.target.closest("[data-track]");
+  if(tb){ const nm = document.getElementById("nm"); if(nm) S.name = nm.value.trim(); S.track = tb.dataset.track; save(); home(); return; }
+  const act = e.target.closest("[data-act]")?.dataset.act;
+  if(act === "retrack"){ S.track = ""; save(); home(); return; }
+  if(act === "showpaths" && z){ T["all-" + z.id] = true; renderDecide(z); return; }
+  if(act === "stamp" && z){ if(!reqs(z).every(x => x[1])) return; S.stamps[z.id] = new Date().toLocaleDateString(undefined, { day:"numeric", month:"long", year:"numeric" }); save(); setMeter(); renderGate(z); stampOverlay(z); return; }
+  if(act === "copycov"){ copy(covenantText()); return; }
+  if(act === "copyrefl"){ copy(ZONES.filter(x => S.refl[x.id]).map(x => `${x.name}\n${S.refl[x.id]}`).join("\n\n")); return; }
+  if(act === "reset1"){ document.getElementById("resetrow").innerHTML = `<span>This cannot be undone.</span><button type="button" class="btn big" data-act="reset2">Yes, clear everything</button><button type="button" class="btn ghost" data-act="reset0">Keep my progress</button>`; return; }
+  if(act === "reset0"){ passport(); return; }
+  if(act === "reset2"){ S = blank(); for(const k in T) delete T[k]; save(); go("home"); return; }
+  if(!z) return;
+  // sort
+  const si = e.target.closest("[data-sort-item]");
+  if(si){ const t = T[z.id], k = +si.dataset.sortItem; t.sel = t.sel === k ? null : k; t.msg = ""; renderAct(z); return; }
+  const sb = e.target.closest("[data-sort-bucket]");
+  if(sb){ placeInBucket(z, +sb.dataset.sortBucket); return; }
+  // mcq
+  const mo = e.target.closest("[data-mcq]");
+  if(mo){ const t = T[z.id], qi = +mo.dataset.mcq, oi = +mo.dataset.opt, q = z.practise.questions[qi];
+    if(oi === q.a) t.right[qi] = true; else (t.wrong[qi] = t.wrong[qi] || []).push(oi);
+    if(Object.keys(t.right).length === z.practise.questions.length){ S.acts[z.id] = true; save(); }
+    renderAct(z); renderGate(z); return; }
+  // decide
+  const dc = e.target.closest("[data-decide]");
+  if(dc && S.choices[z.id] == null){ S.choices[z.id] = +dc.dataset.decide; save(); renderDecide(z); renderGate(z); return; }
+});
+function placeInBucket(z, bi){
+  const t = T[z.id], a = z.practise;
+  if(t.sel == null){ t.msg = `<p class="msg no">Tap a card first, then tap a basket.</p>`; renderAct(z); return; }
+  const it = a.items[t.sel];
+  if(it.b === bi){ t.placed[t.sel] = true; t.sel = null; t.msg = `<p class="msg ok">${esc(it.why)}</p>`;
+    if(Object.keys(t.placed).length === a.items.length){ S.acts[z.id] = true; save(); t.msg = ""; }
+    renderAct(z); renderGate(z);
+  } else {
+    t.msg = `<p class="msg no">Not quite. Read the card again and think about where it belongs.</p>`; renderAct(z);
+    const el = document.querySelector(`[data-sort-item="${t.sel}"]`); if(el){ el.classList.add("shake"); }
+  }
+}
+document.addEventListener("keydown", e => {
+  if((e.key === "Enter" || e.key === " ") && e.target.matches("[data-sort-bucket]")){ e.preventDefault(); const z = byId(view); if(z) placeInBucket(z, +e.target.dataset.sortBucket); }
+  if(e.key === "Escape"){ const o = document.querySelector(".overlay"); if(o){ o.remove(); go(view); } }
+});
+document.addEventListener("input", e => {
+  const el = e.target;
+  if(el.id === "nm"){ S.name = el.value.trim(); save(); return; }
+  if(el.id === "refl"){ const z = byId(el.dataset.zone); S.refl[z.id] = el.value; save(); updateWC(z); renderGate(z); return; }
+  if(el.dataset.cov){ S.cov[el.dataset.cov] = el.value; save(); document.getElementById("covout").innerHTML = covenantHTML(); renderGate(byId("z9")); return; }
+});
+document.addEventListener("change", e => {
+  const el = e.target;
+  if(el.dataset.covlist){ const list = S.cov[el.dataset.covlist], v = +el.value; const i = list.indexOf(v); if(el.checked && i < 0) list.push(v); if(!el.checked && i >= 0) list.splice(i, 1); list.sort((a,b) => a - b); save(); document.getElementById("covout").innerHTML = covenantHTML(); renderGate(byId("z9")); }
+  if(el.dataset.cov){ S.cov[el.dataset.cov] = el.value; save(); document.getElementById("covout").innerHTML = covenantHTML(); renderGate(byId("z9")); }
+});
+
+if(PREVIEW) document.getElementById("previewFlag").hidden = false;
+go("home");
+</script>
+
+</body>
+</html>
